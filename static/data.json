@@ -1,0 +1,284 @@
+{
+  "data": [
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "CallActivity_0x1x83s",
+      "targetNodeId": "ExclusiveGateway_0n2fabx",
+      "count": 419
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_001xv5j",
+      "targetNodeId": "ScriptTask_1fr9eom",
+      "count": 4028
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_001xv5j",
+      "targetNodeId": "UserTask_0iug8ml",
+      "count": 65
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0fnvetd",
+      "targetNodeId": "IntermediateCatchEvent_1b11wyo",
+      "count": 176
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0jtc4z9",
+      "targetNodeId": "UserTask_087dx0n",
+      "count": 4039
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0jtc4z9",
+      "targetNodeId": "UserTask_0ni3ljh",
+      "count": 237
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0jtc4z9",
+      "targetNodeId": "UserTask_19chhsu",
+      "count": 21
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0jtc4z9",
+      "targetNodeId": "UserTask_1ato6h1",
+      "count": 176
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0kqaqzl",
+      "targetNodeId": "IntermediateCatchEvent_1dddzfk",
+      "count": 17
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0kqaqzl",
+      "targetNodeId": "UserTask_133y62l",
+      "count": 4
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0n2fabx",
+      "targetNodeId": "UserTask_0mldq44",
+      "count": 420
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0n2fabx",
+      "targetNodeId": "UserTask_164a7zz",
+      "count": 402
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0t20cvk",
+      "targetNodeId": "ScriptTask_177yqm8",
+      "count": 3
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0t20cvk",
+      "targetNodeId": "UserTask_00bv1kz",
+      "count": 445
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0z08pun",
+      "targetNodeId": "IntermediateCatchEvent_15ympnc",
+      "count": 3842
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_0z08pun",
+      "targetNodeId": "UserTask_1owy3fj",
+      "count": 197
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_1uzm9al",
+      "targetNodeId": "ScriptTask_1pp5lx0",
+      "count": 402
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_1xxo4xr",
+      "targetNodeId": "IntermediateCatchEvent_0k6hta6",
+      "count": 35
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ExclusiveGateway_1xxo4xr",
+      "targetNodeId": "UserTask_0l54hcc",
+      "count": 202
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "IntermediateCatchEvent_0k6hta6",
+      "targetNodeId": "ExclusiveGateway_001xv5j",
+      "count": 31
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "IntermediateCatchEvent_15ympnc",
+      "targetNodeId": "ExclusiveGateway_001xv5j",
+      "count": 3868
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "IntermediateCatchEvent_1b11wyo",
+      "targetNodeId": "ExclusiveGateway_001xv5j",
+      "count": 176
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "IntermediateCatchEvent_1dddzfk",
+      "targetNodeId": "ExclusiveGateway_001xv5j",
+      "count": 18
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ScriptTask_091sf22",
+      "targetNodeId": "ExclusiveGateway_0jtc4z9",
+      "count": 445
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ScriptTask_177yqm8",
+      "targetNodeId": "EndEvent_1l6q35u",
+      "count": 3
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ScriptTask_1fr9eom",
+      "targetNodeId": "ExclusiveGateway_0jtc4z9",
+      "count": 4028
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "ScriptTask_1pp5lx0",
+      "targetNodeId": "EndEvent_0nhnk8p",
+      "count": 402
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "StartEvent_1",
+      "targetNodeId": "UserTask_0iug8ml",
+      "count": 383
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_00bv1kz",
+      "targetNodeId": "ScriptTask_091sf22",
+      "count": 445
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_087dx0n",
+      "targetNodeId": "ExclusiveGateway_0z08pun",
+      "count": 4039
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_0iug8ml",
+      "targetNodeId": "UserTask_1snldx6",
+      "count": 448
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_0l54hcc",
+      "targetNodeId": "ExclusiveGateway_0n2fabx",
+      "count": 202
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_0mldq44",
+      "targetNodeId": "CallActivity_0x1x83s",
+      "count": 420
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_0ni3ljh",
+      "targetNodeId": "ExclusiveGateway_1xxo4xr",
+      "count": 237
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_133y62l",
+      "targetNodeId": "ExclusiveGateway_0n2fabx",
+      "count": 4
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_164a7zz",
+      "targetNodeId": "ExclusiveGateway_1uzm9al",
+      "count": 402
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_19chhsu",
+      "targetNodeId": "ExclusiveGateway_0kqaqzl",
+      "count": 21
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_1ato6h1",
+      "targetNodeId": "ExclusiveGateway_0fnvetd",
+      "count": 176
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_1owy3fj",
+      "targetNodeId": "ExclusiveGateway_0n2fabx",
+      "count": 197
+    },
+    {
+      "date_time": "2017-08-09 16",
+      "workflowDefinitionId": "PurchaseDeliveryWorkflow:3:b8041a3e-75e0-11e7-8095-064c77bb9b63",
+      "sourceNodeId": "UserTask_1snldx6",
+      "targetNodeId": "ExclusiveGateway_0t20cvk",
+      "count": 448
+    }
+  ]
+}

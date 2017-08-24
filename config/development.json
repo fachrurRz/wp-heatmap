@@ -1,0 +1,7 @@
+{
+  "apiHost": "http://localhost:3000",
+  "cookie": {
+    "domain": "localhost",
+    "secure": false
+  }
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.2">
+  <bpmn:collaboration id="Collaboration_0f9a87y">
+    <bpmn:participant id="Participant_19rfnoj" name="TBI" processRef="WF-TBI-09-ChargeType" />
+  </bpmn:collaboration>
+  <bpmn:process id="WF-TBI-09-ChargeType" name="Checking Charge Type" isExecutable="true">
+    <bpmn:ioSpecification>
+      <bpmn:dataInput id="Input_1c5vtaa" itemSubjectRef="itemDefInput_1c5vtaa" name="pinChargeTypesJson" />
+      <bpmn:dataOutput id="Output_2qulvqv" itemSubjectRef="itemDefOutput_2qulvqv" name="poutChargeTypesJson" />
+      <bpmn:inputSet>
+        <bpmn:dataInputRefs>Input_1c5vtaa</bpmn:dataInputRefs>
+      </bpmn:inputSet>
+      <bpmn:outputSet>
+        <bpmn:dataOutputRefs>Output_2qulvqv</bpmn:dataOutputRefs>
+      </bpmn:outputSet>
+    </bpmn:ioSpecification>
+    <bpmn:laneSet>
+      <bpmn:lane id="Lane_0wj1bml" name="TBI_Instance">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_0hlg5ny</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_15749y7</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_0vjcdai</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0vjcdai" sourceRef="StartEvent_1" targetRef="UserTask_15749y7" />
+    <bpmn:endEvent id="EndEvent_0hlg5ny">
+      <bpmn:incoming>SequenceFlow_0tf13g6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0tf13g6" sourceRef="UserTask_15749y7" targetRef="EndEvent_0hlg5ny" />
+    <bpmn:userTask id="UserTask_15749y7" name="ensureChargeType">
+      <bpmn:incoming>SequenceFlow_0vjcdai</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0tf13g6</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_252b1bg" itemSubjectRef="itemDefInput_252b1bg" name="tinChargeTypesJson" />
+        <bpmn:dataOutput id="Output_2k06h1s" itemSubjectRef="itemDefOutput_2k06h1s" name="toutChargeTypesJson" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_252b1bg</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_2k06h1s</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0hlzcwx">
+        <bpmn:sourceRef>Input_1c5vtaa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_252b1bg</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1bkzojb">
+        <bpmn:sourceRef>Output_2k06h1s</bpmn:sourceRef>
+        <bpmn:targetRef>Output_2qulvqv</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:itemDefinition id="itemDefInput_22npaob" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1c5vtaa" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_2qulvqv" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_1p81r0n" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_252b1bg" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_2k06h1s" structureRef="string" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0f9a87y">
+      <bpmndi:BPMNShape id="Participant_19rfnoj_di" bpmnElement="Participant_19rfnoj">
+        <dc:Bounds x="123" y="49" width="422" height="246" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wj1bml_di" bpmnElement="Lane_0wj1bml">
+        <dc:Bounds x="153" y="49" width="392" height="246" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0vjcdai_di" bpmnElement="SequenceFlow_0vjcdai">
+        <di:waypoint xsi:type="dc:Point" x="218" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="272" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="200" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0hlg5ny_di" bpmnElement="EndEvent_0hlg5ny">
+        <dc:Bounds x="451" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="424" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0tf13g6_di" bpmnElement="SequenceFlow_0tf13g6">
+        <di:waypoint xsi:type="dc:Point" x="372" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="451" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="366.5" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_15749y7_di" bpmnElement="UserTask_15749y7">
+        <dc:Bounds x="272" y="133" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

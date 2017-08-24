@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Heatmap Directive Example | heatmap.js</title>
+  </head>
+  <body >
+  	<div class="heatmap">
+  		<canvas id="heatmap" class="heatmap" width=1000 height=1000 style="border:1px solid">
+  		
+  	</div>
+    <script src="/build/heatmap.js"></script>
+    <script>
+    	window.onload = function() {
+        box1 = {
+          x: 526,
+          y: 133,
+          width: 100,
+          height: 80,
+        }
+
+        line1 = {
+          x: 218,
+          y: 173,
+          x2: 526,
+          y2: 173,
+          width: 526-218,
+          height: 2,
+        }
+        console.log(box1['x'])
+
+        var points = []
+        for (var i = box1['width']; i >= 0; i-=2) {
+          for (var j = box1['height']; j >= 0; j -= 2) {
+            var dataPoint = { 
+			  			x: box1['x']+i, // x coordinate of the datapoint, a number 
+			  			y: box1['y']+j, // y coordinate of the datapoint, a number
+			  			value: 1, // the value at datapoint(x, y)
+						};
+						points[points.length] = dataPoint
+          }
+        }
+
+        for (var i = line1['width']; i >= 0; i-=2) {
+          for (var j = line1['height']; j >= 0; j -= 2) {
+            var dataPoint = { 
+			  			x: line1['x']+i, // x coordinate of the datapoint, a number 
+			  			y: line1['y']+j, // y coordinate of the datapoint, a number
+			  			value: 1, // the value at datapoint(x, y)
+						};
+						points[points.length] = dataPoint
+          }
+        }
+
+				var heatmapInstance = h337.create({
+				  // only container is required, the rest will be defaults
+				  container: document.querySelector('.heatmap'),
+  				maxOpacity: 0.6,
+				});
+
+				console.log(points.length)
+
+				var data = ({
+  				max: 10,
+  				data: points
+				});
+        
+        heatmapInstance.setData(data);
+
+        var img = new Image();
+    		img.src = 'ss.png';
+				img.onload = function() {
+    			var ctx = document.getElementById('heatmap').getContext('2d');
+ 		   		ctx.drawImage(img, 165, 50);
+				}
+
+				
+			};
+
+     
+
+    </script>
+  </body>
+</html>

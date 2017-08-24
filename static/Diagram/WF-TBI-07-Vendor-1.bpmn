@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.2">
+  <bpmn:collaboration id="Collaboration_0f9a87y">
+    <bpmn:participant id="Participant_19rfnoj" name="TBI" processRef="WF-TBI-07-Vendor" />
+  </bpmn:collaboration>
+  <bpmn:process id="WF-TBI-07-Vendor" name="Checking Vendor" isExecutable="true">
+    <bpmn:ioSpecification>
+      <bpmn:dataInput id="Input_3114h9s" itemSubjectRef="itemDefInput_3114h9s" name="pinVendorJson" />
+      <bpmn:dataOutput id="Output_05ss0bd" itemSubjectRef="itemDefOutput_05ss0bd" name="poutVendorJson" />
+      <bpmn:inputSet>
+        <bpmn:dataInputRefs>Input_3114h9s</bpmn:dataInputRefs>
+      </bpmn:inputSet>
+      <bpmn:outputSet>
+        <bpmn:dataOutputRefs>Output_05ss0bd</bpmn:dataOutputRefs>
+      </bpmn:outputSet>
+    </bpmn:ioSpecification>
+    <bpmn:laneSet>
+      <bpmn:lane id="Lane_0wj1bml" name="TBI_Instance">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_0u46vdf</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_0h2n074</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_0qnkdl9</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0qnkdl9" sourceRef="StartEvent_1" targetRef="UserTask_0h2n074" />
+    <bpmn:sequenceFlow id="SequenceFlow_0g8sfr1" sourceRef="UserTask_0h2n074" targetRef="EndEvent_0u46vdf" />
+    <bpmn:endEvent id="EndEvent_0u46vdf">
+      <bpmn:incoming>SequenceFlow_0g8sfr1</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="UserTask_0h2n074" name="ensureVendor">
+      <bpmn:incoming>SequenceFlow_0qnkdl9</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0g8sfr1</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_16k6qd8" itemSubjectRef="itemDefInput_16k6qd8" name="tinVendorJson" />
+        <bpmn:dataOutput id="Output_3g45l8k" itemSubjectRef="itemDefOutput_3g45l8k" name="toutVendorJson" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_16k6qd8</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_3g45l8k</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0r03ktx">
+        <bpmn:sourceRef>Input_3114h9s</bpmn:sourceRef>
+        <bpmn:targetRef>Input_16k6qd8</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1bbwz7y">
+        <bpmn:sourceRef>Output_3g45l8k</bpmn:sourceRef>
+        <bpmn:targetRef>Output_05ss0bd</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:association id="Association_1gp11ao" sourceRef="UserTask_0h2n074" targetRef="TextAnnotation_04v3m96" />
+    <bpmn:textAnnotation id="TextAnnotation_04v3m96">    <bpmn:text>convertVendorContactToVendorAndInsert</bpmn:text>
+</bpmn:textAnnotation>
+  </bpmn:process>
+  <bpmn:itemDefinition id="itemDefInput_3114h9s" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_05ss0bd" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2lmc97l" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_0tdna7l" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_16k6qd8" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_3g45l8k" structureRef="string" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0f9a87y">
+      <bpmndi:BPMNShape id="Participant_19rfnoj_di" bpmnElement="Participant_19rfnoj">
+        <dc:Bounds x="108" y="49" width="459" height="307" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wj1bml_di" bpmnElement="Lane_0wj1bml">
+        <dc:Bounds x="138" y="49" width="429" height="307" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0qnkdl9_di" bpmnElement="SequenceFlow_0qnkdl9">
+        <di:waypoint xsi:type="dc:Point" x="218" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="286" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="196" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0u46vdf_di" bpmnElement="EndEvent_0u46vdf">
+        <dc:Bounds x="452" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="425" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0g8sfr1_di" bpmnElement="SequenceFlow_0g8sfr1">
+        <di:waypoint xsi:type="dc:Point" x="386" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="452" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="348.5" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_04v3m96_di" bpmnElement="TextAnnotation_04v3m96">
+        <dc:Bounds x="269" y="254" width="159" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1gp11ao_di" bpmnElement="Association_1gp11ao">
+        <di:waypoint xsi:type="dc:Point" x="341" y="213" />
+        <di:waypoint xsi:type="dc:Point" x="346" y="254" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0h2n074_di" bpmnElement="UserTask_0h2n074">
+        <dc:Bounds x="286" y="133" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

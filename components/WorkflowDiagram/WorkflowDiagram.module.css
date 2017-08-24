@@ -1,0 +1,25 @@
+.bodyContainer {
+    position: relative;
+    height: 75vh;
+}
+
+.diagramContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+.heatmapContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,100,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+

@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.2">
+  <bpmn:collaboration id="Collaboration_0f9a87y">
+    <bpmn:participant id="Participant_19rfnoj" processRef="SalesInvoicePaymentReceiptWorkflow" />
+  </bpmn:collaboration>
+  <bpmn:process id="SalesInvoicePaymentReceiptWorkflow" name="SalesInvoicePaymentReceiptWorkflow" isExecutable="true">
+    <bpmn:ioSpecification>
+      <bpmn:dataInput id="Input_2qatg3g" itemSubjectRef="itemDefInput_2qatg3g" name="paidInvoices" />
+      <bpmn:dataInput id="Input_0tn5olb" itemSubjectRef="itemDefInput_0tn5olb" name="userInvoiceId" />
+      <bpmn:dataInput id="Input_1f1vajk" itemSubjectRef="itemDefInput_1f1vajk" name="bpDocumentOwner" />
+      <bpmn:dataInput id="Input_3iqd046" itemSubjectRef="itemDefInput_3iqd046" name="transactionId" />
+      <bpmn:dataOutput id="Output_074k2cv" itemSubjectRef="itemDefOutput_074k2cv" name="bpSalesInvoicePaymentReceipts" />
+      <bpmn:dataOutput id="Output_12hekei" itemSubjectRef="itemDefOutput_12hekei" name="bpCompany" />
+      <bpmn:inputSet>
+        <bpmn:dataInputRefs>Input_2qatg3g</bpmn:dataInputRefs>
+        <bpmn:dataInputRefs>Input_0tn5olb</bpmn:dataInputRefs>
+        <bpmn:dataInputRefs>Input_1f1vajk</bpmn:dataInputRefs>
+        <bpmn:dataInputRefs>Input_3iqd046</bpmn:dataInputRefs>
+      </bpmn:inputSet>
+      <bpmn:outputSet>
+        <bpmn:dataOutputRefs>Output_074k2cv</bpmn:dataOutputRefs>
+        <bpmn:dataOutputRefs>Output_12hekei</bpmn:dataOutputRefs>
+      </bpmn:outputSet>
+    </bpmn:ioSpecification>
+    <bpmn:laneSet>
+      <bpmn:lane id="Lane_0wj1bml" name="TBI_Instance">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_1qtc66t</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_1qt0rfk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_09j71bh</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_19ge257</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_0vnaufa</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_0l0dgaf</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_1lqgdg8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_0qz9wdv</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_0g6bl8k</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_0hnfuc0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_1xkzlxk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_0yvchug</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_1edtbpl</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_028izvj</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ExclusiveGateway_0e3y67i</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_0f84xu5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ScriptTask_1vtxjol</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>CallActivity_1s2nugq</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_1u27s1x</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_05n3c4z</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_19owepa</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_1pqwwr4</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_15jjwev</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:parallelGateway id="ParallelGateway_1qtc66t">
+      <bpmn:incoming>SequenceFlow_1mb81af</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_094no82</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0atq0hz</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:parallelGateway id="ParallelGateway_1qt0rfk">
+      <bpmn:incoming>SequenceFlow_1nsprp6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_03gb9pk</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1kkggz6</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_01xtfcg</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:userTask id="UserTask_09j71bh" name="prepareSalesInvoicePaymentReceiptsInitialVariables">
+      <bpmn:incoming>SequenceFlow_15jjwev</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1mb81af</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_1js7ul3" itemSubjectRef="itemDefInput_1js7ul3" name="paidInvoices" />
+        <bpmn:dataInput id="Input_05mo7l8" itemSubjectRef="itemDefInput_05mo7l8" name="userInvoiceId" />
+        <bpmn:dataInput id="Input_0mspn76" itemSubjectRef="itemDefInput_0mspn76" name="transactionId" />
+        <bpmn:dataOutput id="Output_3o4lo9d" itemSubjectRef="itemDefOutput_3o4lo9d" name="currencies" />
+        <bpmn:dataOutput id="Output_3cid5nh" itemSubjectRef="itemDefOutput_3cid5nh" name="salesInvoiceId" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_1js7ul3</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_05mo7l8</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_0mspn76</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_3o4lo9d</bpmn:dataOutputRefs>
+          <bpmn:dataOutputRefs>Output_3cid5nh</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1aanx7e">
+        <bpmn:sourceRef>Input_2qatg3g</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1js7ul3</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0tlkxsb">
+        <bpmn:sourceRef>Input_0tn5olb</bpmn:sourceRef>
+        <bpmn:targetRef>Input_05mo7l8</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1aznvek">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0mspn76</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_02xf201">
+        <bpmn:sourceRef>Output_3o4lo9d</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_21g4mpr</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0rqkoei">
+        <bpmn:sourceRef>Output_3cid5nh</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2ngn06i</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_19ge257" name="updateIncomingPaymentsToLatest">
+      <bpmn:incoming>SequenceFlow_1oiqtsc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1nsprp6</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_1bv35o1" itemSubjectRef="itemDefInput_1bv35o1" name="bpSalesInvoicePaymentReceiptsInput" />
+        <bpmn:dataInput id="Input_0966hv8" itemSubjectRef="itemDefInput_0966hv8" name="transactionId" />
+        <bpmn:dataOutput id="Output_2g65io2" itemSubjectRef="itemDefOutput_2g65io2" name="bpSalesInvoicePaymentReceiptsOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_1bv35o1</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_0966hv8</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_2g65io2</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0recd6n">
+        <bpmn:sourceRef>ProcessVar_2bgduqa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1bv35o1</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1eszix3">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0966hv8</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0ygyshd">
+        <bpmn:sourceRef>Output_2g65io2</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2bgduqa</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_0vnaufa" name="updateSalesInvoicePaymentReceiptTracking">
+      <bpmn:incoming>SequenceFlow_03gb9pk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0dltzhz</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_3l3mj85" itemSubjectRef="itemDefInput_3l3mj85" name="bpSalesInvoicePaymentReceiptsInput" />
+        <bpmn:dataInput id="Input_00o6q8b" itemSubjectRef="itemDefInput_00o6q8b" name="salesInvoiceId" />
+        <bpmn:dataInput id="Input_2f7r079" itemSubjectRef="itemDefInput_2f7r079" name="transactionId" />
+        <bpmn:dataOutput id="Output_1of4t8f" itemSubjectRef="itemDefOutput_1of4t8f" name="bpSalesInvoicePaymentReceiptsOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_3l3mj85</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_00o6q8b</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_2f7r079</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_1of4t8f</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0bdwdn7">
+        <bpmn:sourceRef>ProcessVar_2bgduqa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_3l3mj85</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_18dqnfi">
+        <bpmn:sourceRef>ProcessVar_2ngn06i</bpmn:sourceRef>
+        <bpmn:targetRef>Input_00o6q8b</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1qzgbl7">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_2f7r079</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0bnwg0c">
+        <bpmn:sourceRef>Output_1of4t8f</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2bgduqa</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_0l0dgaf" name="getInvoiceCompany">
+      <bpmn:incoming>SequenceFlow_01xtfcg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qnzkfq</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_0gn58j0" itemSubjectRef="itemDefInput_0gn58j0" name="bpSalesInvoicePaymentReceipts" />
+        <bpmn:dataInput id="Input_2u9220i" itemSubjectRef="itemDefInput_2u9220i" name="transactionId" />
+        <bpmn:dataOutput id="Output_1175t21" itemSubjectRef="itemDefOutput_1175t21" name="bpCompany" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_0gn58j0</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_2u9220i</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_1175t21</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1pnfzox">
+        <bpmn:sourceRef>ProcessVar_2bgduqa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0gn58j0</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_157ubq2">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_2u9220i</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_025e16h">
+        <bpmn:sourceRef>Output_1175t21</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_28r07hg</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_1lqgdg8" name="getHeldIncomingPayments">
+      <bpmn:incoming>SequenceFlow_1kkggz6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1l70pk8</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_29015id" itemSubjectRef="itemDefInput_29015id" name="bpSalesInvoicePaymentReceipts" />
+        <bpmn:dataInput id="Input_3gscuat" itemSubjectRef="itemDefInput_3gscuat" name="transactionId" />
+        <bpmn:dataOutput id="Output_2g8illo" itemSubjectRef="itemDefOutput_2g8illo" name="heldIncomingPayments" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_29015id</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_3gscuat</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_2g8illo</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0tm0mka">
+        <bpmn:sourceRef>ProcessVar_2bgduqa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_29015id</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_06w5lx0">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_3gscuat</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1j6i83h">
+        <bpmn:sourceRef>Output_2g8illo</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_267qbp4</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="ParallelGateway_0qz9wdv">
+      <bpmn:incoming>SequenceFlow_0dltzhz</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1qnzkfq</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1l70pk8</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0awm0c1</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0be24iy</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:parallelGateway id="ParallelGateway_0g6bl8k">
+      <bpmn:incoming>SequenceFlow_0be24iy</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0awm0c1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1vs76ix</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1535kdf</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_10x6f7w</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:parallelGateway id="ParallelGateway_0hnfuc0">
+      <bpmn:incoming>SequenceFlow_1qks41a</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0vg4yxp</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1mdgkk0</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:parallelGateway id="ParallelGateway_1xkzlxk">
+      <bpmn:incoming>SequenceFlow_1ik7t0r</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_06x6oy0</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0eq5uu5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qks41a</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:userTask id="UserTask_0yvchug" name="setSalesInvoicePaymentReceiptsCompany">
+      <bpmn:incoming>SequenceFlow_1535kdf</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ik7t0r</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_1da5art" itemSubjectRef="itemDefInput_1da5art" name="bpSalesInvoicePaymentReceiptsInput" />
+        <bpmn:dataInput id="Input_2q5g0uc" itemSubjectRef="itemDefInput_2q5g0uc" name="bpCompany" />
+        <bpmn:dataInput id="Input_0c8q3uq" itemSubjectRef="itemDefInput_0c8q3uq" name="transactionId" />
+        <bpmn:dataOutput id="Output_24ffa9c" itemSubjectRef="itemDefOutput_24ffa9c" name="bpSalesInvoicePaymentReceiptsOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_1da5art</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_2q5g0uc</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_0c8q3uq</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_24ffa9c</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0yx6jb2">
+        <bpmn:sourceRef>ProcessVar_2bgduqa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1da5art</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0b12k9g">
+        <bpmn:sourceRef>ProcessVar_28r07hg</bpmn:sourceRef>
+        <bpmn:targetRef>Input_2q5g0uc</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_03vw607">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0c8q3uq</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0wf0u91">
+        <bpmn:sourceRef>Output_24ffa9c</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2bgduqa</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_1edtbpl" name="setHeldIncomingPaymentsCompany">
+      <bpmn:incoming>SequenceFlow_1vs76ix</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1tphrdd</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_16e7655" itemSubjectRef="itemDefInput_16e7655" name="heldIncomingPaymentsInput" />
+        <bpmn:dataInput id="Input_0ospk59" itemSubjectRef="itemDefInput_0ospk59" name="bpCompany" />
+        <bpmn:dataInput id="Input_2v5u18i" itemSubjectRef="itemDefInput_2v5u18i" name="transactionId" />
+        <bpmn:dataOutput id="Output_1jlqvuu" itemSubjectRef="itemDefOutput_1jlqvuu" name="heldIncomingPaymentsOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_16e7655</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_0ospk59</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_2v5u18i</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_1jlqvuu</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_11d3fjy">
+        <bpmn:sourceRef>ProcessVar_267qbp4</bpmn:sourceRef>
+        <bpmn:targetRef>Input_16e7655</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_01l2i71">
+        <bpmn:sourceRef>ProcessVar_28r07hg</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0ospk59</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_19ypjxs">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_2v5u18i</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0vteqxi">
+        <bpmn:sourceRef>Output_1jlqvuu</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_267qbp4</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_028izvj" name="insertHeldIncomingPayments">
+      <bpmn:incoming>SequenceFlow_1tphrdd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_06x6oy0</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_1v9g7lq" itemSubjectRef="itemDefInput_1v9g7lq" name="heldIncomingPayments" />
+        <bpmn:dataInput id="Input_13k3c17" itemSubjectRef="itemDefInput_13k3c17" name="transactionId" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_1v9g7lq</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_13k3c17</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet />
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1s06z9r">
+        <bpmn:sourceRef>ProcessVar_267qbp4</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1v9g7lq</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0xatplo">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_13k3c17</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_15jjwev" sourceRef="StartEvent_1" targetRef="UserTask_09j71bh" />
+    <bpmn:sequenceFlow id="SequenceFlow_1mb81af" sourceRef="UserTask_09j71bh" targetRef="ParallelGateway_1qtc66t" />
+    <bpmn:sequenceFlow id="SequenceFlow_094no82" sourceRef="ParallelGateway_1qtc66t" targetRef="UserTask_1pqwwr4" />
+    <bpmn:sequenceFlow id="SequenceFlow_0atq0hz" sourceRef="ParallelGateway_1qtc66t" targetRef="ExclusiveGateway_0e3y67i" />
+    <bpmn:sequenceFlow id="SequenceFlow_1nsprp6" sourceRef="UserTask_19ge257" targetRef="ParallelGateway_1qt0rfk" />
+    <bpmn:sequenceFlow id="SequenceFlow_03gb9pk" sourceRef="ParallelGateway_1qt0rfk" targetRef="UserTask_0vnaufa" />
+    <bpmn:sequenceFlow id="SequenceFlow_1kkggz6" sourceRef="ParallelGateway_1qt0rfk" targetRef="UserTask_1lqgdg8" />
+    <bpmn:sequenceFlow id="SequenceFlow_01xtfcg" sourceRef="ParallelGateway_1qt0rfk" targetRef="UserTask_0l0dgaf" />
+    <bpmn:sequenceFlow id="SequenceFlow_1oiqtsc" sourceRef="UserTask_1pqwwr4" targetRef="UserTask_19ge257" />
+    <bpmn:sequenceFlow id="SequenceFlow_0dltzhz" sourceRef="UserTask_0vnaufa" targetRef="ParallelGateway_0qz9wdv" />
+    <bpmn:sequenceFlow id="SequenceFlow_1qnzkfq" sourceRef="UserTask_0l0dgaf" targetRef="ParallelGateway_0qz9wdv" />
+    <bpmn:sequenceFlow id="SequenceFlow_1l70pk8" sourceRef="UserTask_1lqgdg8" targetRef="ParallelGateway_0qz9wdv" />
+    <bpmn:sequenceFlow id="SequenceFlow_0awm0c1" sourceRef="ParallelGateway_0qz9wdv" targetRef="ParallelGateway_0g6bl8k" />
+    <bpmn:sequenceFlow id="SequenceFlow_0be24iy" sourceRef="ParallelGateway_0qz9wdv" targetRef="ParallelGateway_0g6bl8k" />
+    <bpmn:sequenceFlow id="SequenceFlow_1535kdf" sourceRef="ParallelGateway_0g6bl8k" targetRef="UserTask_0yvchug" />
+    <bpmn:sequenceFlow id="SequenceFlow_1vs76ix" sourceRef="ParallelGateway_0g6bl8k" targetRef="UserTask_1edtbpl" />
+    <bpmn:sequenceFlow id="SequenceFlow_1qks41a" sourceRef="ParallelGateway_1xkzlxk" targetRef="ParallelGateway_0hnfuc0" />
+    <bpmn:sequenceFlow id="SequenceFlow_1mdgkk0" sourceRef="ParallelGateway_0hnfuc0" targetRef="UserTask_05n3c4z" />
+    <bpmn:sequenceFlow id="SequenceFlow_1ik7t0r" sourceRef="UserTask_0yvchug" targetRef="ParallelGateway_1xkzlxk" />
+    <bpmn:sequenceFlow id="SequenceFlow_06x6oy0" sourceRef="UserTask_028izvj" targetRef="ParallelGateway_1xkzlxk" />
+    <bpmn:sequenceFlow id="SequenceFlow_1tphrdd" sourceRef="UserTask_1edtbpl" targetRef="UserTask_028izvj" />
+    <bpmn:dataObject id="ProcessVar_21g4mpr" name="pvarCurrencies" itemSubjectRef="itemDefProcessVar_21g4mpr" />
+    <bpmn:dataObject id="ProcessVar_20cm0mc" name="pvarCurrentCurrency" itemSubjectRef="itemDefProcessVar_20cm0mc" />
+    <bpmn:dataObject id="ProcessVar_18lo5lj" name="pvarCurrentBPCurrency" itemSubjectRef="itemDefProcessVar_18lo5lj" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0e3y67i">
+      <bpmn:incoming>SequenceFlow_0atq0hz</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1qvpdvx</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0xij600</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0vg4yxp</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="UserTask_0f84xu5" name="iterateCurrencies">
+      <bpmn:incoming>SequenceFlow_0xij600</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1clp7x3</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_09p2gmr" itemSubjectRef="itemDefInput_09p2gmr" name="currenciesInput" />
+        <bpmn:dataInput id="Input_2u04s58" itemSubjectRef="itemDefInput_2u04s58" name="transactionId" />
+        <bpmn:dataOutput id="Output_35gfc48" itemSubjectRef="itemDefOutput_35gfc48" name="currenciesOutput" />
+        <bpmn:dataOutput id="Output_09qn1md" itemSubjectRef="itemDefOutput_09qn1md" name="currentCurrency" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_09p2gmr</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_2u04s58</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_35gfc48</bpmn:dataOutputRefs>
+          <bpmn:dataOutputRefs>Output_09qn1md</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_039nrrb">
+        <bpmn:sourceRef>ProcessVar_21g4mpr</bpmn:sourceRef>
+        <bpmn:targetRef>Input_09p2gmr</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_11elm8k">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_2u04s58</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1wqdin3">
+        <bpmn:sourceRef>Output_09qn1md</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_20cm0mc</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0mixgur">
+        <bpmn:sourceRef>Output_35gfc48</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_21g4mpr</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1qvpdvx" sourceRef="UserTask_19owepa" targetRef="ExclusiveGateway_0e3y67i" />
+    <bpmn:sequenceFlow id="SequenceFlow_0xij600" name="not null" sourceRef="ExclusiveGateway_0e3y67i" targetRef="UserTask_0f84xu5">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pvarCurrencies != null}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1clp7x3" sourceRef="UserTask_0f84xu5" targetRef="CallActivity_1s2nugq" />
+    <bpmn:dataObject id="ProcessVar_2bgduqa" name="pvarBPSalesInvoicePaymentReceipts" itemSubjectRef="itemDefProcessVar_2bgduqa" />
+    <bpmn:dataObject id="ProcessVar_28r07hg" name="pvarBPCompany" itemSubjectRef="itemDefProcessVar_28r07hg" />
+    <bpmn:dataObject id="ProcessVar_267qbp4" name="pvarHeldIncomingPayments" itemSubjectRef="itemDefProcessVar_267qbp4" />
+    <bpmn:sequenceFlow id="SequenceFlow_10x6f7w" sourceRef="ParallelGateway_0g6bl8k" targetRef="ScriptTask_1vtxjol" />
+    <bpmn:scriptTask id="ScriptTask_1vtxjol" name="setBPCompanyOutput" scriptFormat="javascript">
+      <bpmn:incoming>SequenceFlow_10x6f7w</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0eq5uu5</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_1oiea5i" itemSubjectRef="itemDefInput_1oiea5i" name="bpCompanyInput" />
+        <bpmn:dataOutput id="Output_34mpgk7" itemSubjectRef="itemDefOutput_34mpgk7" name="bpCompanyOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_1oiea5i</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_34mpgk7</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_09t0cin">
+        <bpmn:sourceRef>ProcessVar_28r07hg</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1oiea5i</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_01x8ktj">
+        <bpmn:sourceRef>Output_34mpgk7</bpmn:sourceRef>
+        <bpmn:targetRef>Output_12hekei</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:script><![CDATA[ioVar.put("bpCompanyOutput", ioVar.get("bpCompanyInput"));]]></bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0eq5uu5" sourceRef="ScriptTask_1vtxjol" targetRef="ParallelGateway_1xkzlxk" />
+    <bpmn:callActivity id="CallActivity_1s2nugq" name="CurrencyWorkflow" calledElement="CurrencyWorkflow">
+      <bpmn:incoming>SequenceFlow_1clp7x3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ylw27e</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_34odjmu" itemSubjectRef="itemDefInput_34odjmu" name="currency" />
+        <bpmn:dataInput id="Input_0nctj3m" itemSubjectRef="itemDefInput_0nctj3m" name="transactionId" />
+        <bpmn:dataOutput id="Output_00t58ie" itemSubjectRef="itemDefOutput_00t58ie" name="bpCurrency" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_34odjmu</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_0nctj3m</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_00t58ie</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0ygzm0d">
+        <bpmn:sourceRef>ProcessVar_20cm0mc</bpmn:sourceRef>
+        <bpmn:targetRef>Input_34odjmu</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1nqy30n">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0nctj3m</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_092w9wz">
+        <bpmn:sourceRef>Output_00t58ie</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_18lo5lj</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="SequenceFlow_0vg4yxp" name="null" sourceRef="ExclusiveGateway_0e3y67i" targetRef="ParallelGateway_0hnfuc0">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pvarCurrencies == null}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="EndEvent_1u27s1x">
+      <bpmn:incoming>SequenceFlow_0hsa3n0</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0hsa3n0" sourceRef="UserTask_05n3c4z" targetRef="EndEvent_1u27s1x" />
+    <bpmn:userTask id="UserTask_05n3c4z" name="patchSalesInvoicePaymentReceiptsCurrency">
+      <bpmn:incoming>SequenceFlow_1mdgkk0</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0hsa3n0</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_1bargb0" itemSubjectRef="itemDefInput_1bargb0" name="bpSalesInvoicePaymentReceiptsInput" />
+        <bpmn:dataInput id="Input_084bask" itemSubjectRef="itemDefInput_084bask" name="bpCurrencyPatchMap" />
+        <bpmn:dataInput id="Input_0lofdhn" itemSubjectRef="itemDefInput_0lofdhn" name="transactionId" />
+        <bpmn:dataOutput id="Output_06pqrlc" itemSubjectRef="itemDefOutput_06pqrlc" name="bpSalesInvoicePaymentReceiptsOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_1bargb0</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_084bask</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_0lofdhn</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_06pqrlc</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1pnedhj">
+        <bpmn:sourceRef>ProcessVar_2bgduqa</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1bargb0</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_12herkl">
+        <bpmn:sourceRef>ProcessVar_3pr50pk</bpmn:sourceRef>
+        <bpmn:targetRef>Input_084bask</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1qcc4hs">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0lofdhn</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1aeuozd">
+        <bpmn:sourceRef>Output_06pqrlc</bpmn:sourceRef>
+        <bpmn:targetRef>Output_074k2cv</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:dataObject id="ProcessVar_3pr50pk" name="pvarBPCurrencyPatchMap" itemSubjectRef="itemDefProcessVar_3pr50pk" />
+    <bpmn:sequenceFlow id="SequenceFlow_1ylw27e" sourceRef="CallActivity_1s2nugq" targetRef="UserTask_19owepa" />
+    <bpmn:userTask id="UserTask_19owepa" name="addBPCurrencyToPatchMap">
+      <bpmn:incoming>SequenceFlow_1ylw27e</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qvpdvx</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_0u4i167" itemSubjectRef="itemDefInput_0u4i167" name="bpCurrencyPatchMap" />
+        <bpmn:dataInput id="Input_14cpt0b" itemSubjectRef="itemDefInput_14cpt0b" name="bpCurrency" />
+        <bpmn:dataInput id="Input_3ccd7v4" itemSubjectRef="itemDefInput_3ccd7v4" name="transactionId" />
+        <bpmn:dataOutput id="Output_1te3ek8" itemSubjectRef="itemDefOutput_1te3ek8" name="bpCurrencyPatchMapOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_0u4i167</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_14cpt0b</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_3ccd7v4</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_1te3ek8</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_12nv4e8">
+        <bpmn:sourceRef>ProcessVar_3pr50pk</bpmn:sourceRef>
+        <bpmn:targetRef>Input_0u4i167</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0xshfho">
+        <bpmn:sourceRef>ProcessVar_18lo5lj</bpmn:sourceRef>
+        <bpmn:targetRef>Input_14cpt0b</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1rnzjy1">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_3ccd7v4</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0m4q54n">
+        <bpmn:sourceRef>Output_1te3ek8</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_3pr50pk</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:dataObject id="ProcessVar_2ngn06i" name="pvarSalesInvoiceId" itemSubjectRef="itemDefProcessVar_2ngn06i" />
+    <bpmn:userTask id="UserTask_1pqwwr4" name="buildSalesInvoicePaymentReceiptsWithoutCompany">
+      <bpmn:incoming>SequenceFlow_094no82</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1oiqtsc</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_3vjodbg" itemSubjectRef="itemDefInput_3vjodbg" name="paidInvoices" />
+        <bpmn:dataInput id="Input_36i8r96" itemSubjectRef="itemDefInput_36i8r96" name="salesInvoiceId" />
+        <bpmn:dataInput id="Input_1kjkpn2" itemSubjectRef="itemDefInput_1kjkpn2" name="bpDocumentOwner" />
+        <bpmn:dataInput id="Input_1v4m43q" itemSubjectRef="itemDefInput_1v4m43q" name="transactionId" />
+        <bpmn:dataOutput id="Output_1ugdmhg" itemSubjectRef="itemDefOutput_1ugdmhg" name="bpSalesInvoicePaymentReceipts" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_3vjodbg</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_36i8r96</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_1kjkpn2</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_1v4m43q</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_1ugdmhg</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0l1s97u">
+        <bpmn:sourceRef>Input_2qatg3g</bpmn:sourceRef>
+        <bpmn:targetRef>Input_3vjodbg</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_07iexrs">
+        <bpmn:sourceRef>ProcessVar_2ngn06i</bpmn:sourceRef>
+        <bpmn:targetRef>Input_36i8r96</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0wkl0qz">
+        <bpmn:sourceRef>Input_1f1vajk</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1kjkpn2</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1ttex49">
+        <bpmn:sourceRef>Input_3iqd046</bpmn:sourceRef>
+        <bpmn:targetRef>Input_1v4m43q</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0x5hdq0">
+        <bpmn:sourceRef>Output_1ugdmhg</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2bgduqa</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:itemDefinition id="itemDefInput_2qatg3g" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_074k2cv" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_12hekei" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1js7ul3" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefProcessVar_21g4mpr" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_3o4lo9d" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_34odjmu" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefProcessVar_20cm0mc" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_09p2gmr" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_35gfc48" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_09qn1md" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_00t58ie" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefProcessVar_18lo5lj" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3vjodbg" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_36i8r96" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefOutput_1ugdmhg" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefProcessVar_2bgduqa" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1bv35o1" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_2g65io2" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3l3mj85" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_1of4t8f" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0gn58j0" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_1175t21" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefProcessVar_28r07hg" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_29015id" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_2g8illo" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefProcessVar_267qbp4" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_16e7655" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_1jlqvuu" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0ospk59" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1da5art" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2q5g0uc" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_24ffa9c" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1v9g7lq" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1oiea5i" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_34mpgk7" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0tn5olb" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefProcessVar_3pr50pk" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0u4i167" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_14cpt0b" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_1te3ek8" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1bargb0" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_084bask" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_06pqrlc" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_00o6q8b" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefInput_05mo7l8" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefOutput_3cid5nh" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefProcessVar_2ngn06i" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefInput_1f1vajk" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1kjkpn2" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0mspn76" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3iqd046" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0nctj3m" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2u04s58" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3ccd7v4" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1v4m43q" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0966hv8" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3gscuat" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2u9220i" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2f7r079" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2v5u18i" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_13k3c17" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0c8q3uq" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0lofdhn" structureRef="string" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0f9a87y">
+      <bpmndi:BPMNShape id="Participant_19rfnoj_di" bpmnElement="Participant_19rfnoj">
+        <dc:Bounds x="123" y="-39" width="1815" height="627" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="227" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="263" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wj1bml_di" bpmnElement="Lane_0wj1bml">
+        <dc:Bounds x="153" y="-39" width="1785" height="627" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_15jjwev_di" bpmnElement="SequenceFlow_15jjwev">
+        <di:waypoint xsi:type="dc:Point" x="218" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="258" y="244" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="192" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1oiqtsc_di" bpmnElement="SequenceFlow_1oiqtsc">
+        <di:waypoint xsi:type="dc:Point" x="611" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="646" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="646" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="672" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="610" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1nsprp6_di" bpmnElement="SequenceFlow_1nsprp6">
+        <di:waypoint xsi:type="dc:Point" x="772" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="818" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="768" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0dltzhz_di" bpmnElement="SequenceFlow_0dltzhz">
+        <di:waypoint xsi:type="dc:Point" x="1006" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1045" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="990" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1mb81af_di" bpmnElement="SequenceFlow_1mb81af">
+        <di:waypoint xsi:type="dc:Point" x="358" y="244" />
+        <di:waypoint xsi:type="dc:Point" x="408" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="334" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_094no82_di" bpmnElement="SequenceFlow_094no82">
+        <di:waypoint xsi:type="dc:Point" x="458" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="511" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="444" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ParallelGateway_1qtc66t_di" bpmnElement="ParallelGateway_1qtc66t">
+        <dc:Bounds x="408" y="220" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="388" y="270" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0atq0hz_di" bpmnElement="SequenceFlow_0atq0hz">
+        <di:waypoint xsi:type="dc:Point" x="433" y="270" />
+        <di:waypoint xsi:type="dc:Point" x="433" y="407" />
+        <di:waypoint xsi:type="dc:Point" x="482" y="407" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="403" y="335" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ParallelGateway_0hnfuc0_di" bpmnElement="ParallelGateway_0hnfuc0">
+        <dc:Bounds x="1574" y="220" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1554" y="270" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ik7t0r_di" bpmnElement="SequenceFlow_1ik7t0r">
+        <di:waypoint xsi:type="dc:Point" x="1328" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1494" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1308" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qvpdvx_di" bpmnElement="SequenceFlow_1qvpdvx">
+        <di:waypoint xsi:type="dc:Point" x="980" y="447" />
+        <di:waypoint xsi:type="dc:Point" x="980" y="491" />
+        <di:waypoint xsi:type="dc:Point" x="507" y="491" />
+        <di:waypoint xsi:type="dc:Point" x="507" y="432" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="698.5" y="466" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="CallActivity_1s2nugq_di" bpmnElement="CallActivity_1s2nugq">
+        <dc:Bounds x="777" y="367" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_03gb9pk_di" bpmnElement="SequenceFlow_03gb9pk">
+        <di:waypoint xsi:type="dc:Point" x="868" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="906" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="838" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ParallelGateway_1qt0rfk_di" bpmnElement="ParallelGateway_1qt0rfk">
+        <dc:Bounds x="818" y="220" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="798" y="270" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1kkggz6_di" bpmnElement="SequenceFlow_1kkggz6">
+        <di:waypoint xsi:type="dc:Point" x="843" y="220" />
+        <di:waypoint xsi:type="dc:Point" x="843" y="20" />
+        <di:waypoint xsi:type="dc:Point" x="906" y="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="813" y="159" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_01xtfcg_di" bpmnElement="SequenceFlow_01xtfcg">
+        <di:waypoint xsi:type="dc:Point" x="843" y="220" />
+        <di:waypoint xsi:type="dc:Point" x="843" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="906" y="137" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="813" y="104" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0awm0c1_di" bpmnElement="SequenceFlow_0awm0c1">
+        <di:waypoint xsi:type="dc:Point" x="1095" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1140" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1073" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ParallelGateway_0qz9wdv_di" bpmnElement="ParallelGateway_0qz9wdv">
+        <dc:Bounds x="1045" y="220" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1025" y="270" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qnzkfq_di" bpmnElement="SequenceFlow_1qnzkfq">
+        <di:waypoint xsi:type="dc:Point" x="1006" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="1070" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="1070" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="989" y="-17" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1l70pk8_di" bpmnElement="SequenceFlow_1l70pk8">
+        <di:waypoint xsi:type="dc:Point" x="1006" y="20" />
+        <di:waypoint xsi:type="dc:Point" x="1070" y="20" />
+        <di:waypoint xsi:type="dc:Point" x="1070" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="989" y="-5" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0be24iy_di" bpmnElement="SequenceFlow_0be24iy">
+        <di:waypoint xsi:type="dc:Point" x="1095" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1140" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1088" y="181" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1tphrdd_di" bpmnElement="SequenceFlow_1tphrdd">
+        <di:waypoint xsi:type="dc:Point" x="1328" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="1363" y="137" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1301" y="112" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_06x6oy0_di" bpmnElement="SequenceFlow_06x6oy0">
+        <di:waypoint xsi:type="dc:Point" x="1463" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="1519" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="1519" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1446" y="112" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qks41a_di" bpmnElement="SequenceFlow_1qks41a">
+        <di:waypoint xsi:type="dc:Point" x="1544" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1574" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1514" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ParallelGateway_1xkzlxk_di" bpmnElement="ParallelGateway_1xkzlxk">
+        <dc:Bounds x="1494" y="220" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1474" y="270" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1u27s1x_di" bpmnElement="EndEvent_1u27s1x">
+        <dc:Bounds x="1853" y="227" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1826" y="263" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1mdgkk0_di" bpmnElement="SequenceFlow_1mdgkk0">
+        <di:waypoint xsi:type="dc:Point" x="1624" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1679" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1604" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_09j71bh_di" bpmnElement="UserTask_09j71bh">
+        <dc:Bounds x="258" y="204" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1pqwwr4_di" bpmnElement="UserTask_1pqwwr4">
+        <dc:Bounds x="511" y="205" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_19ge257_di" bpmnElement="UserTask_19ge257">
+        <dc:Bounds x="672" y="205" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0vnaufa_di" bpmnElement="UserTask_0vnaufa">
+        <dc:Bounds x="906" y="205" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0l0dgaf_di" bpmnElement="UserTask_0l0dgaf">
+        <dc:Bounds x="906" y="97" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1lqgdg8_di" bpmnElement="UserTask_1lqgdg8">
+        <dc:Bounds x="906" y="-20" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0yvchug_di" bpmnElement="UserTask_0yvchug">
+        <dc:Bounds x="1228" y="205" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1edtbpl_di" bpmnElement="UserTask_1edtbpl">
+        <dc:Bounds x="1228" y="97" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_028izvj_di" bpmnElement="UserTask_028izvj">
+        <dc:Bounds x="1363" y="97" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1vs76ix_di" bpmnElement="SequenceFlow_1vs76ix">
+        <di:waypoint xsi:type="dc:Point" x="1165" y="220" />
+        <di:waypoint xsi:type="dc:Point" x="1165" y="137" />
+        <di:waypoint xsi:type="dc:Point" x="1228" y="137" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1135" y="169" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1535kdf_di" bpmnElement="SequenceFlow_1535kdf">
+        <di:waypoint xsi:type="dc:Point" x="1190" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1228" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1175" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ParallelGateway_0g6bl8k_di" bpmnElement="ParallelGateway_0g6bl8k">
+        <dc:Bounds x="1140" y="220" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1120" y="270" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0e3y67i_di" bpmnElement="ExclusiveGateway_0e3y67i" isMarkerVisible="true">
+        <dc:Bounds x="482.04291417165666" y="382" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="462.04291417165666" y="432" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1clp7x3_di" bpmnElement="SequenceFlow_1clp7x3">
+        <di:waypoint xsi:type="dc:Point" x="728" y="407" />
+        <di:waypoint xsi:type="dc:Point" x="777" y="407" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="901" y="382" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0xij600_di" bpmnElement="SequenceFlow_0xij600">
+        <di:waypoint xsi:type="dc:Point" x="532" y="407" />
+        <di:waypoint xsi:type="dc:Point" x="628" y="407" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="525" y="421" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0f84xu5_di" bpmnElement="UserTask_0f84xu5">
+        <dc:Bounds x="628" y="367" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_10x6f7w_di" bpmnElement="SequenceFlow_10x6f7w">
+        <di:waypoint xsi:type="dc:Point" x="1165" y="220" />
+        <di:waypoint xsi:type="dc:Point" x="1165" y="28" />
+        <di:waypoint xsi:type="dc:Point" x="1228" y="28" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1135" y="114" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ScriptTask_1vtxjol_di" bpmnElement="ScriptTask_1vtxjol">
+        <dc:Bounds x="1228" y="-12" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0eq5uu5_di" bpmnElement="SequenceFlow_0eq5uu5">
+        <di:waypoint xsi:type="dc:Point" x="1328" y="28" />
+        <di:waypoint xsi:type="dc:Point" x="1519" y="28" />
+        <di:waypoint xsi:type="dc:Point" x="1519" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1378.5" y="3" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0vg4yxp_di" bpmnElement="SequenceFlow_0vg4yxp">
+        <di:waypoint xsi:type="dc:Point" x="507" y="382" />
+        <di:waypoint xsi:type="dc:Point" x="507" y="334" />
+        <di:waypoint xsi:type="dc:Point" x="1599" y="334" />
+        <di:waypoint xsi:type="dc:Point" x="1599" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1010" y="354" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0hsa3n0_di" bpmnElement="SequenceFlow_0hsa3n0">
+        <di:waypoint xsi:type="dc:Point" x="1779" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="1853" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1771" y="220" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_05n3c4z_di" bpmnElement="UserTask_05n3c4z">
+        <dc:Bounds x="1679" y="205" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ylw27e_di" bpmnElement="SequenceFlow_1ylw27e">
+        <di:waypoint xsi:type="dc:Point" x="877" y="407" />
+        <di:waypoint xsi:type="dc:Point" x="930" y="407" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="858.5" y="382" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_19owepa_di" bpmnElement="UserTask_19owepa">
+        <dc:Bounds x="930" y="367" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

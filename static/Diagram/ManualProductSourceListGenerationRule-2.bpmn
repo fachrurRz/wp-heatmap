@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.2">
+  <bpmn:collaboration id="Collaboration_0f9a87y">
+    <bpmn:participant id="Participant_19rfnoj" processRef="ManualProductSourceListGenerationRule" />
+  </bpmn:collaboration>
+  <bpmn:process id="ManualProductSourceListGenerationRule" name="ManualProductSourceListGenerationRule" isExecutable="true">
+    <bpmn:ioSpecification>
+      <bpmn:dataInput id="Input_0mklk9f" itemSubjectRef="itemDefInput_0mklk9f" name="inputProductSourceListGenerationRules" />
+      <bpmn:dataInput id="Input_3g1p594" itemSubjectRef="itemDefInput_3g1p594" name="transactionId" />
+      <bpmn:inputSet>
+        <bpmn:dataInputRefs>Input_0mklk9f</bpmn:dataInputRefs>
+        <bpmn:dataInputRefs>Input_3g1p594</bpmn:dataInputRefs>
+      </bpmn:inputSet>
+      <bpmn:outputSet />
+    </bpmn:ioSpecification>
+    <bpmn:laneSet>
+      <bpmn:lane id="Lane_0wj1bml" name="TBI_Instance">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ScriptTask_16aq3wn</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ExclusiveGateway_0xr3ezs</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_0zpxxzr</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_176dw1m</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>CallActivity_005h3sy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_1tkfdlv</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1dupo5c</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1dupo5c" sourceRef="StartEvent_1" targetRef="ScriptTask_16aq3wn" />
+    <bpmn:dataObject id="ProcessVar_2t6sh2n" name="pvarProductSourceListGenerationRuleInputs" itemSubjectRef="itemDefProcessVar_2t6sh2n" />
+    <bpmn:sequenceFlow id="SequenceFlow_1m8slei" sourceRef="ScriptTask_16aq3wn" targetRef="ExclusiveGateway_0xr3ezs" />
+    <bpmn:scriptTask id="ScriptTask_16aq3wn" name="setInputProcessVariable" scriptFormat="javascript">
+      <bpmn:incoming>SequenceFlow_1dupo5c</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1m8slei</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_18df1ki" itemSubjectRef="itemDefInput_18df1ki" name="productSourceListGenerationRuleInput" />
+        <bpmn:dataOutput id="Output_3vq4erm" itemSubjectRef="itemDefOutput_3vq4erm" name="productSourceListGenerationRuleOutput" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_18df1ki</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_3vq4erm</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0kghvts">
+        <bpmn:sourceRef>Input_0mklk9f</bpmn:sourceRef>
+        <bpmn:targetRef>Input_18df1ki</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0tq1msj">
+        <bpmn:sourceRef>Output_3vq4erm</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2t6sh2n</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:script><![CDATA[ioVar.put("productSourceListGenerationRuleOutput", ioVar.get("productSourceListGenerationRuleInput"))]]></bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:dataObject id="ProcessVar_03m0uck" name="pvarProductSourceListGenerationRuleInput" itemSubjectRef="itemDefProcessVar_03m0uck" />
+    <bpmn:sequenceFlow id="SequenceFlow_05ovoi5" name="got available product source list generation rule" sourceRef="ExclusiveGateway_0xr3ezs" targetRef="UserTask_0zpxxzr">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pvarProductSourceListGenerationRuleInputs != null}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1clulh0" sourceRef="ParallelGateway_176dw1m" targetRef="ExclusiveGateway_0xr3ezs" />
+    <bpmn:sequenceFlow id="SequenceFlow_07f9v89" name="available product source list generation rule empty" sourceRef="ExclusiveGateway_0xr3ezs" targetRef="EndEvent_1tkfdlv">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pvarProductSourceListGenerationRuleInputs == null}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0xr3ezs" name="checkAvailableInputProductSourceListGenerationRules">
+      <bpmn:incoming>SequenceFlow_1clulh0</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1m8slei</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_05ovoi5</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_07f9v89</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="UserTask_0zpxxzr" name="separateSingleProductSourceListGenerationRule">
+      <bpmn:incoming>SequenceFlow_05ovoi5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0w4vgln</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_3879luo" itemSubjectRef="itemDefInput_3879luo" name="availableProductSourceListGenerationRule" />
+        <bpmn:dataOutput id="Output_2e92u35" itemSubjectRef="itemDefOutput_2e92u35" name="productSourceListGenerationRule" />
+        <bpmn:dataOutput id="Output_0ik2ijr" itemSubjectRef="itemDefOutput_0ik2ijr" name="productSourceListGenerationRules" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_3879luo</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_2e92u35</bpmn:dataOutputRefs>
+          <bpmn:dataOutputRefs>Output_0ik2ijr</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0f3mw2s">
+        <bpmn:sourceRef>ProcessVar_2t6sh2n</bpmn:sourceRef>
+        <bpmn:targetRef>Input_3879luo</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_112h7il">
+        <bpmn:sourceRef>Output_2e92u35</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_03m0uck</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0prdw6h">
+        <bpmn:sourceRef>Output_0ik2ijr</bpmn:sourceRef>
+        <bpmn:targetRef>ProcessVar_2t6sh2n</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="ParallelGateway_176dw1m">
+      <bpmn:incoming>SequenceFlow_0w4vgln</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1clulh0</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0yn7anc</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0w4vgln" sourceRef="UserTask_0zpxxzr" targetRef="ParallelGateway_176dw1m" />
+    <bpmn:sequenceFlow id="SequenceFlow_0yn7anc" sourceRef="ParallelGateway_176dw1m" targetRef="CallActivity_005h3sy" />
+    <bpmn:callActivity id="CallActivity_005h3sy" name="ProductSourceListGenerationRuleWorkflow" calledElement="ProductSourceListGenerationRuleWorkflow">
+      <bpmn:incoming>SequenceFlow_0yn7anc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_06il3h2</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_09bat0d" itemSubjectRef="itemDefInput_09bat0d" name="productSourceListGenerationRule" />
+        <bpmn:dataInput id="Input_31p8hld" itemSubjectRef="itemDefInput_31p8hld" name="transactionId" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_09bat0d</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_31p8hld</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet />
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0mdg4x0">
+        <bpmn:sourceRef>ProcessVar_03m0uck</bpmn:sourceRef>
+        <bpmn:targetRef>Input_09bat0d</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1y7fahn">
+        <bpmn:sourceRef>Input_3g1p594</bpmn:sourceRef>
+        <bpmn:targetRef>Input_31p8hld</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:callActivity>
+    <bpmn:endEvent id="EndEvent_1tkfdlv">
+      <bpmn:incoming>SequenceFlow_07f9v89</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_06il3h2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_06il3h2" sourceRef="CallActivity_005h3sy" targetRef="EndEvent_1tkfdlv" />
+  </bpmn:process>
+  <bpmn:itemDefinition id="itemDefInput_0mklk9f" structureRef="string" isCollection="true" />
+  <bpmn:itemDefinition id="itemDefInput_18df1ki" structureRef="string" isCollection="true" />
+  <bpmn:itemDefinition id="itemDefProcessVar_2t6sh2n" structureRef="string" isCollection="true" />
+  <bpmn:itemDefinition id="itemDefOutput_3vq4erm" structureRef="string" isCollection="true" />
+  <bpmn:itemDefinition id="itemDefProcessVar_03m0uck" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3879luo" structureRef="string" isCollection="true" />
+  <bpmn:itemDefinition id="itemDefOutput_2e92u35" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_0ik2ijr" structureRef="string" isCollection="true" />
+  <bpmn:itemDefinition id="itemDefInput_0oaghk2" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_0tfi8th" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_017ebrf" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_0isodtj" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3halc3f" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_160iec1" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_0fhugfp" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_21c8g59" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_24fug4v" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2i8fsvb" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_0l1hqv3" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_3rk4nqs" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2kltsai" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_2r4jtg8" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefInput_3bs2g0m" structureRef="long" />
+  <bpmn:itemDefinition id="itemDefInput_09bat0d" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_3g1p594" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_31p8hld" structureRef="string" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0f9a87y">
+      <bpmndi:BPMNShape id="Participant_19rfnoj_di" bpmnElement="Participant_19rfnoj">
+        <dc:Bounds x="123" y="-15" width="1264" height="497" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wj1bml_di" bpmnElement="Lane_0wj1bml">
+        <dc:Bounds x="153" y="-15" width="1234" height="497" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ScriptTask_16aq3wn_di" bpmnElement="ScriptTask_16aq3wn">
+        <dc:Bounds x="317" y="133" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1dupo5c_di" bpmnElement="SequenceFlow_1dupo5c">
+        <di:waypoint xsi:type="dc:Point" x="218" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="317" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="202.5" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1m8slei_di" bpmnElement="SequenceFlow_1m8slei">
+        <di:waypoint xsi:type="dc:Point" x="417" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="514" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="362.5" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0w4vgln_di" bpmnElement="SequenceFlow_0w4vgln">
+        <di:waypoint xsi:type="dc:Point" x="781" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="849" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="775" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0zpxxzr_di" bpmnElement="UserTask_0zpxxzr">
+        <dc:Bounds x="681" y="133" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParallelGateway_176dw1m_di" bpmnElement="ParallelGateway_176dw1m">
+        <dc:Bounds x="849" y="148" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="829" y="198" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0xr3ezs_di" bpmnElement="ExclusiveGateway_0xr3ezs" isMarkerVisible="true">
+        <dc:Bounds x="514" y="148" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="494" y="198" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1clulh0_di" bpmnElement="SequenceFlow_1clulh0">
+        <di:waypoint xsi:type="dc:Point" x="874" y="148" />
+        <di:waypoint xsi:type="dc:Point" x="874" y="81" />
+        <di:waypoint xsi:type="dc:Point" x="539" y="81" />
+        <di:waypoint xsi:type="dc:Point" x="539" y="148" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="675.5" y="56" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_05ovoi5_di" bpmnElement="SequenceFlow_05ovoi5">
+        <di:waypoint xsi:type="dc:Point" x="564" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="681" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="571" y="124" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1tkfdlv_di" bpmnElement="EndEvent_1tkfdlv">
+        <dc:Bounds x="1198" y="348" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1171" y="384" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_07f9v89_di" bpmnElement="SequenceFlow_07f9v89">
+        <di:waypoint xsi:type="dc:Point" x="539" y="198" />
+        <di:waypoint xsi:type="dc:Point" x="539" y="366" />
+        <di:waypoint xsi:type="dc:Point" x="1198" y="366" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1061" y="386" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0yn7anc_di" bpmnElement="SequenceFlow_0yn7anc">
+        <di:waypoint xsi:type="dc:Point" x="899" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="1004" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="924.5" y="148" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="CallActivity_005h3sy_di" bpmnElement="CallActivity_005h3sy">
+        <dc:Bounds x="1004" y="133" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_06il3h2_di" bpmnElement="SequenceFlow_06il3h2">
+        <di:waypoint xsi:type="dc:Point" x="1104" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="1216" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="1216" y="348" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1188" y="261.5" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

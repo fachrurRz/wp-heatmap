@@ -1,0 +1,305 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'i', '-g', 'npm-upgrade' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ 'npm-upgrade', null ]
+5 verbose cache add name=undefined spec="npm-upgrade" args=["npm-upgrade",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'npm-upgrade',
+6 verbose parsed url   path: 'npm-upgrade',
+6 verbose parsed url   href: 'npm-upgrade' }
+7 silly lockFile b370dab3-npm-upgrade npm-upgrade
+8 verbose lock npm-upgrade /home/traveloka/.npm/b370dab3-npm-upgrade.lock
+9 silly lockFile b370dab3-npm-upgrade npm-upgrade
+10 silly lockFile b370dab3-npm-upgrade npm-upgrade
+11 verbose addNamed [ 'npm-upgrade', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 5a69087e-npm-upgrade npm-upgrade@
+14 verbose lock npm-upgrade@ /home/traveloka/.npm/5a69087e-npm-upgrade.lock
+15 silly addNameRange { name: 'npm-upgrade', range: '*', hasData: false }
+16 verbose url raw npm-upgrade
+17 verbose url resolving [ 'https://registry.npmjs.org/', './npm-upgrade' ]
+18 verbose url resolved https://registry.npmjs.org/npm-upgrade
+19 info trying registry request attempt 1 at 14:36:30
+20 http GET https://registry.npmjs.org/npm-upgrade
+21 http 200 https://registry.npmjs.org/npm-upgrade
+22 silly registry.get cb [ 200,
+22 silly registry.get   { server: 'nginx/1.10.3',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'last-modified': 'Fri, 11 Aug 2017 18:01:43 GMT',
+22 silly registry.get     etag: '"598df107-a3d9"',
+22 silly registry.get     'cache-control': 'max-age=300',
+22 silly registry.get     'content-length': '41945',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     date: 'Wed, 23 Aug 2017 07:36:35 GMT',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     connection: 'keep-alive',
+22 silly registry.get     'x-served-by': 'cache-sin18024-SIN',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1503473795.957858,VS0,VE429',
+22 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+23 silly addNameRange number 2 { name: 'npm-upgrade', range: '*', hasData: true }
+24 silly addNameRange versions [ 'npm-upgrade',
+24 silly addNameRange   [ '0.1.0',
+24 silly addNameRange     '0.2.0',
+24 silly addNameRange     '0.3.0',
+24 silly addNameRange     '0.4.0',
+24 silly addNameRange     '0.4.1',
+24 silly addNameRange     '0.4.2',
+24 silly addNameRange     '0.4.3',
+24 silly addNameRange     '0.4.4',
+24 silly addNameRange     '0.5.0',
+24 silly addNameRange     '0.5.1',
+24 silly addNameRange     '0.6.0',
+24 silly addNameRange     '0.6.1',
+24 silly addNameRange     '0.6.2',
+24 silly addNameRange     '0.7.0',
+24 silly addNameRange     '1.0.0',
+24 silly addNameRange     '1.0.1',
+24 silly addNameRange     '1.0.2',
+24 silly addNameRange     '1.0.4',
+24 silly addNameRange     '1.1.0',
+24 silly addNameRange     '1.2.0' ] ]
+25 verbose addNamed [ 'npm-upgrade', '1.2.0' ]
+26 verbose addNamed [ '1.2.0', '1.2.0' ]
+27 silly lockFile 81b3d82f-npm-upgrade-1-2-0 npm-upgrade@1.2.0
+28 verbose lock npm-upgrade@1.2.0 /home/traveloka/.npm/81b3d82f-npm-upgrade-1-2-0.lock
+29 silly lockFile 9b7cd031-pm-upgrade-npm-upgrade-1-2-0-tgz https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz
+30 verbose lock https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz /home/traveloka/.npm/9b7cd031-pm-upgrade-npm-upgrade-1-2-0-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz',
+31 verbose addRemoteTarball   '368f9af1be321ce097d622d8f4cb7b4d761bd3e4' ]
+32 info retry fetch attempt 1 at 14:36:35
+33 verbose fetch to= /home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/tmp.tgz
+34 http GET https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz
+35 http 200 https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz
+36 verbose tar unpack /home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/tmp.tgz
+37 silly lockFile ca94748e-95434-0-6965525485575199-package tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+38 verbose lock tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package /home/traveloka/.npm/ca94748e-95434-0-6965525485575199-package.lock
+39 silly lockFile fb71a84b-95434-0-6965525485575199-tmp-tgz tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/tmp.tgz
+40 verbose lock tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/tmp.tgz /home/traveloka/.npm/fb71a84b-95434-0-6965525485575199-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry README.md
+44 silly gunzTarPerm extractEntry LICENSE
+45 silly gunzTarPerm extractEntry CHANGELOG.md
+46 silly gunzTarPerm extractEntry db/changelogUrls.json
+47 silly gunzTarPerm extractEntry lib/Config.js
+48 silly gunzTarPerm extractEntry lib/packageUtils.js
+49 silly gunzTarPerm extractEntry lib/catchAsyncError.js
+50 silly gunzTarPerm extractEntry lib/changelogUtils.js
+51 silly gunzTarPerm extractEntry lib/cliStyles.js
+52 silly gunzTarPerm extractEntry lib/askUser.js
+53 silly gunzTarPerm extractEntry lib/npmProgress.js
+54 silly gunzTarPerm extractEntry lib/filterUtils.js
+55 silly gunzTarPerm extractEntry lib/repositoryUtils.js
+56 silly gunzTarPerm extractEntry lib/cliTable.js
+57 silly gunzTarPerm extractEntry lib/commands/changelog.js
+58 silly gunzTarPerm extractEntry lib/commands/check.js
+59 silly gunzTarPerm extractEntry lib/commands/ignore.js
+60 silly gunzTarPerm extractEntry lib/commands/ignore/add.js
+61 silly gunzTarPerm extractEntry lib/commands/ignore/list.js
+62 silly gunzTarPerm extractEntry lib/commands/ignore/reset.js
+63 silly gunzTarPerm extractEntry lib/bin/cli.js
+64 silly gunzTarPerm extractEntry src/Config.js
+65 silly gunzTarPerm extractEntry src/packageUtils.js
+66 silly gunzTarPerm extractEntry src/catchAsyncError.js
+67 silly gunzTarPerm extractEntry src/changelogUtils.js
+68 silly gunzTarPerm extractEntry src/cliStyles.js
+69 silly gunzTarPerm extractEntry src/askUser.js
+70 silly gunzTarPerm extractEntry src/npmProgress.js
+71 silly gunzTarPerm extractEntry src/filterUtils.js
+72 silly gunzTarPerm extractEntry src/repositoryUtils.js
+73 silly gunzTarPerm extractEntry src/cliTable.js
+74 silly gunzTarPerm extractEntry src/commands/changelog.js
+75 silly gunzTarPerm extractEntry src/commands/check.js
+76 silly gunzTarPerm extractEntry src/commands/ignore.js
+77 silly gunzTarPerm extractEntry src/commands/ignore/add.js
+78 silly gunzTarPerm extractEntry src/commands/ignore/list.js
+79 silly gunzTarPerm extractEntry src/commands/ignore/reset.js
+80 silly gunzTarPerm extractEntry src/bin/cli.js
+81 silly lockFile ca94748e-95434-0-6965525485575199-package tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+82 silly lockFile ca94748e-95434-0-6965525485575199-package tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+83 silly lockFile fb71a84b-95434-0-6965525485575199-tmp-tgz tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/tmp.tgz
+84 silly lockFile fb71a84b-95434-0-6965525485575199-tmp-tgz tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/tmp.tgz
+85 verbose tar pack [ '/home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz',
+85 verbose tar pack   '/home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package' ]
+86 verbose tarball /home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+87 verbose folder /home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+88 silly lockFile ca94748e-95434-0-6965525485575199-package tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+89 verbose lock tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package /home/traveloka/.npm/ca94748e-95434-0-6965525485575199-package.lock
+90 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+91 verbose lock tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz /home/traveloka/.npm/b8777f96-pm-npm-upgrade-1-2-0-package-tgz.lock
+92 silly lockFile ca94748e-95434-0-6965525485575199-package tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+93 silly lockFile ca94748e-95434-0-6965525485575199-package tar:///home/traveloka/tmp/npm-9201--ltEigtm/1503473795434-0.6965525485575199/package
+94 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+95 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+96 silly lockFile 0275110d-ka-npm-npm-upgrade-1-2-0-package /home/traveloka/.npm/npm-upgrade/1.2.0/package
+97 verbose lock /home/traveloka/.npm/npm-upgrade/1.2.0/package /home/traveloka/.npm/0275110d-ka-npm-npm-upgrade-1-2-0-package.lock
+98 silly lockFile 0275110d-ka-npm-npm-upgrade-1-2-0-package /home/traveloka/.npm/npm-upgrade/1.2.0/package
+99 silly lockFile 0275110d-ka-npm-npm-upgrade-1-2-0-package /home/traveloka/.npm/npm-upgrade/1.2.0/package
+100 verbose tar unpack /home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+101 silly lockFile 42fc354d-ka-npm-npm-upgrade-1-2-0-package tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package
+102 verbose lock tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package /home/traveloka/.npm/42fc354d-ka-npm-npm-upgrade-1-2-0-package.lock
+103 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+104 verbose lock tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz /home/traveloka/.npm/b8777f96-pm-npm-upgrade-1-2-0-package-tgz.lock
+105 silly gunzTarPerm modes [ '755', '644' ]
+106 silly gunzTarPerm extractEntry package.json
+107 silly gunzTarPerm extractEntry README.md
+108 silly gunzTarPerm extractEntry db/changelogUrls.json
+109 silly gunzTarPerm extractEntry lib/Config.js
+110 silly gunzTarPerm extractEntry lib/packageUtils.js
+111 silly gunzTarPerm extractEntry lib/catchAsyncError.js
+112 silly gunzTarPerm extractEntry lib/changelogUtils.js
+113 silly gunzTarPerm extractEntry lib/cliStyles.js
+114 silly gunzTarPerm extractEntry lib/askUser.js
+115 silly gunzTarPerm extractEntry lib/npmProgress.js
+116 silly gunzTarPerm extractEntry lib/filterUtils.js
+117 silly gunzTarPerm extractEntry lib/repositoryUtils.js
+118 silly gunzTarPerm extractEntry lib/cliTable.js
+119 silly gunzTarPerm extractEntry lib/commands/changelog.js
+120 silly gunzTarPerm extractEntry lib/commands/check.js
+121 silly gunzTarPerm extractEntry lib/commands/ignore.js
+122 silly gunzTarPerm extractEntry lib/commands/ignore/add.js
+123 silly gunzTarPerm extractEntry lib/commands/ignore/list.js
+124 silly gunzTarPerm extractEntry lib/commands/ignore/reset.js
+125 silly gunzTarPerm extractEntry lib/bin/cli.js
+126 silly gunzTarPerm extractEntry src/Config.js
+127 silly gunzTarPerm extractEntry src/packageUtils.js
+128 silly gunzTarPerm extractEntry src/catchAsyncError.js
+129 silly gunzTarPerm extractEntry src/changelogUtils.js
+130 silly gunzTarPerm extractEntry src/cliStyles.js
+131 silly gunzTarPerm extractEntry src/askUser.js
+132 silly gunzTarPerm extractEntry src/npmProgress.js
+133 silly gunzTarPerm extractEntry src/filterUtils.js
+134 silly gunzTarPerm extractEntry src/repositoryUtils.js
+135 silly gunzTarPerm extractEntry src/cliTable.js
+136 silly gunzTarPerm extractEntry src/commands/changelog.js
+137 silly gunzTarPerm extractEntry src/commands/check.js
+138 silly gunzTarPerm extractEntry src/commands/ignore.js
+139 silly gunzTarPerm extractEntry src/commands/ignore/add.js
+140 silly gunzTarPerm extractEntry src/commands/ignore/list.js
+141 silly gunzTarPerm extractEntry src/commands/ignore/reset.js
+142 silly gunzTarPerm extractEntry src/bin/cli.js
+143 silly lockFile 42fc354d-ka-npm-npm-upgrade-1-2-0-package tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package
+144 silly lockFile 42fc354d-ka-npm-npm-upgrade-1-2-0-package tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package
+145 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+146 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+147 verbose chmod /home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz 644
+148 verbose chown /home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz [ 1000, 1000 ]
+149 silly lockFile 9b7cd031-pm-upgrade-npm-upgrade-1-2-0-tgz https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz
+150 silly lockFile 9b7cd031-pm-upgrade-npm-upgrade-1-2-0-tgz https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz
+151 silly lockFile 81b3d82f-npm-upgrade-1-2-0 npm-upgrade@1.2.0
+152 silly lockFile 81b3d82f-npm-upgrade-1-2-0 npm-upgrade@1.2.0
+153 silly lockFile 5a69087e-npm-upgrade npm-upgrade@
+154 silly lockFile 5a69087e-npm-upgrade npm-upgrade@
+155 silly resolved [ { name: 'npm-upgrade',
+155 silly resolved     version: '1.2.0',
+155 silly resolved     description: 'Interactive CLI utility to easily update outdated NPM dependencies',
+155 silly resolved     author: { name: 'Yuriy Grunin', email: 'grunin.ya@ya.ru' },
+155 silly resolved     license: 'MIT',
+155 silly resolved     homepage: 'https://github.com/th0r/npm-upgrade',
+155 silly resolved     changelog: 'https://github.com/th0r/npm-upgrade/blob/master/CHANGELOG.md',
+155 silly resolved     bugs: { url: 'https://github.com/th0r/npm-upgrade/issues' },
+155 silly resolved     repository:
+155 silly resolved      { type: 'git',
+155 silly resolved        url: 'git+https://github.com/th0r/npm-upgrade.git' },
+155 silly resolved     main: './lib/bin/cli.js',
+155 silly resolved     bin: { 'npm-upgrade': './lib/bin/cli.js' },
+155 silly resolved     scripts: { prepare: 'gulp build' },
+155 silly resolved     engines: { node: '>=4' },
+155 silly resolved     preferGlobal: true,
+155 silly resolved     dependencies:
+155 silly resolved      { 'babel-runtime': '6.25.0',
+155 silly resolved        bluebird: '3.5.0',
+155 silly resolved        chalk: '2.1.0',
+155 silly resolved        'cli-table': '0.3.1',
+155 silly resolved        del: '3.0.0',
+155 silly resolved        got: '7.1.0',
+155 silly resolved        inquirer: '3.2.1',
+155 silly resolved        lodash: '4.17.4',
+155 silly resolved        npm: '^3.10.6',
+155 silly resolved        'npm-check-updates': '2.12.1',
+155 silly resolved        opener: '1.4.3',
+155 silly resolved        semver: '5.4.1',
+155 silly resolved        yargs: '8.0.2' },
+155 silly resolved     devDependencies:
+155 silly resolved      { 'babel-core': '6.25.0',
+155 silly resolved        'babel-eslint': '7.2.3',
+155 silly resolved        'babel-plugin-transform-runtime': '6.23.0',
+155 silly resolved        'babel-preset-env': '1.6.0',
+155 silly resolved        'babel-preset-stage-2': '6.24.1',
+155 silly resolved        bun: '0.0.11',
+155 silly resolved        eslint: '3.19.0',
+155 silly resolved        'eslint-plugin-babel': '4.1.2',
+155 silly resolved        gulp: '3.9.1',
+155 silly resolved        'gulp-babel': '7.0.0',
+155 silly resolved        'gulp-plumber': '1.1.0',
+155 silly resolved        'gulp-util': '3.0.8',
+155 silly resolved        'gulp-watch': '4.3.11' },
+155 silly resolved     files: [ 'lib', 'src', 'db' ],
+155 silly resolved     directories: { lib: './lib' },
+155 silly resolved     keywords:
+155 silly resolved      [ 'npm',
+155 silly resolved        'update',
+155 silly resolved        'outdated',
+155 silly resolved        'dependencies',
+155 silly resolved        'cli',
+155 silly resolved        'interactive',
+155 silly resolved        'automatic',
+155 silly resolved        'changelog',
+155 silly resolved        'ignore' ],
+155 silly resolved     readme: '# npm-upgrade\nInteractive CLI utility to easily update outdated NPM dependencies with changelogs inspection support.\n\n[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]\n\n## What is this for?\nIf you are tired of manually upgrading `package.json` every time your package dependencies are getting out of date then this utility is for you.\n\nTake a look at this demo:\n\n![npm-upgrade outdated packages](https://cloud.githubusercontent.com/assets/302213/11168821/08311b90-8bb2-11e5-9a71-5da73682ed44.gif)\n\n## Installation\nFirst, install [Node.js](https://nodejs.org) (at least `v4`).\n\nThen install this utility as global npm-module:\n```sh\nnpm i -g npm-upgrade\n```\n\n## Usage\nThis utility is supposed to be run in the root directory of your Node.js project (that contains `package.json`).\nRun `npm-upgrade --help` to see all available top-level commands:\n```\ncheck [filter]          Check for outdated modules\nignore <command>        Manage ignored modules\nchangelog <moduleName>  Show changelog for a module\n```\nRun `npm-upgrade <command> --help` to see usage help for corresponding command.\n`check` is the default command and can be omitted so running `npm-upgrade [filter]` is the same as `npm-upgrade check [filter]`.\n\n### `check` command\nIt will find all your outdated deps and will ask to updated their versions in `package.json`, one by one.\nFor example, here is what you will see if you use outdated version of `@angular/common` module:\n```\nUpdate "@angular/common" in package.json from 2.4.8 to 2.4.10? (Use arrow keys)\n❯ Yes\n  No\n  Show changelog\n  Ignore\n  Finish update process\n```\n* `Yes` will update `@angular/common` version in `package.json` to `2.4.10`, but not immediately (see explanation below)\n* `No` will not update this module version.\n* `Show changelog` will try to find changelog url for the current module and open it in default browser.\n* `Ignore` will add this module to the ignored list (see details in [`Ignoring module`](#ignoring-module) section below).\n* `Finish update process` will ...hm... finish update process and save all the changes to `package.json`.\n\nA note on saving changes to `package.json`: when you choose `Yes` to update some module\'s version, `package.json` won\'t be immediately updated. It will be updated only after you will process all the outdated modules and confirm update **or** when you choose `Finish update process`. So if in the middle of the update process you\'ve changed your mind just press `Ctrl+C` and `package.json` will remain untouched.\n\nIf you want to check only some deps, you can use `filter` argument:\n```sh\n# Will check only `babel-core` module:\nnpm-upgrade babel-core\n\n# Will check all the deps with `babel` in the name:\nnpm-upgrade \'*babel*\'\n\n# Note quotes around `filter`. They are necessary because without them bash may interpret `*` as wildcard character.\n\n# Will check all the deps, excluding any with `babel` in the name:\nnpm-upgrade \'!*babel*\'\n\n# You can combine including and excluding rules:\nnpm-upgrade \'*babel* !babel-transform-* !babel-preset-*\'\n```\n\nIf you want to check only a group of deps use these options:\n```\n-p, --production   Check only "dependencies"\n-d, --development  Check only "devDependencies"\n-o, --optional     Check only "optionalDependencies"\n```\n\n#### Ignoring module\nSometimes you just want to ignore newer versions of some dependency for some reason. For example, you use `jquery v2` because of the old IE support and don\'t want `npm-upgrade` to suggest you updating it to `v3`. Or you use `some-funky-module@6.6.5` and know that the new version `6.6.6` contains a bug that breaks your app.\n\nYou can handle these situations by ignoring such modules. You can do it in two ways: choosing `Ignore` during update process or using `npm ignore add` command.\n\nYou will asked two questions. First is a version range to ignore. It should be a valid [semver](http://semver.org/) version. Here are a few examples:\n* `6.6.6` - will ignore only version `6.6.6`. When the next version after `6.6.6` will be published `npm-upgrade` will suggest to update it. Can be used in `some-funky-module` example above.\n* `>2` - will ignore all versions starting from `3.0.0`. Can be used in `jquery v2` example above.\n* `6.6.x || 6.7.x` - will ignore all `6.6.x` and `6.7.x` versions.\n* `*` - will ignore all new versions.\n\nAnd after that `npm-upgrade` will ask about the ignore reason. The answer is optional but is strongly recommended because it will help to explain your motivation to your сolleagues and to yourself after a few months.\n\nAll the data about ignored modules will be stored in `.npm-upgrade.json` file next to your project\'s `package.json`.\n\n### `ignore` command\nIt will help you manage ignored modules. See [Ignoring module](#ignoring-module) section for more details.\nIt has the following subcommands:\n```\nnpm-upgrade ignore <command>\n\nCommands:\n  add [module]        Add module to ignored list\n  list                Show the list of ignored modules\n  reset [modules...]  Reset ignored modules\n```\n* `add` - will add a module from your deps to ignored list. You can either provide module name as optional `module` argument or interactively select it from the list of project\'s deps.\n* `list` - will show the list of currently ignored modules along with their ignored versions and reasons.\n* `reset` - will remove modules from the ignored list. You can either provide module names as `modules` argument (separated by space) or interactively select them from the list of project\'s deps.\n\n### `changelog` command\n```\nnpm-upgrade changelog <moduleName>\n```\nWill try to find changelog url for provided module and open it in default browser.\n\n## Troubleshooting\n**Wrong changelog shown for _\\<moduleName\\>_ or not shown at all!**\n\nYes, It can happen sometimes. This is because there is no standardized way to specify changelog location for the module, so it tries to guess it, using these rules one by one:\n\n1. Check `db/changelogUrls.json` from `master` branch on GitHub or the local copy if it\'s unreachable.\n2. Check `changelog` field from module\'s `package.json`.\n3. Parse module\'s `repository.url` field and if it\'s on GitHub, try to request some common changelog files (`CHANGELOG.md`, `History.md` etc.) from `master` branch and if it fails, open `Releases` page.\n\nSo, if it guessed wrong it would be great if you could either [fill an issue](../../issues/new) about this or submit a PR which adds proper changelog URL to `db/changelogUrls.json`. There is a tool in the repository for you to make it as easy as possible:\n```sh\n./tools/addModuleChangelogUrlToDb.js <moduleName> <changelogUrl>\n```\n\n## License\n\n[MIT](LICENSE)\n\n[downloads-image]: https://img.shields.io/npm/dt/npm-upgrade.svg\n[npm-url]: https://www.npmjs.com/package/npm-upgrade\n[npm-image]: https://img.shields.io/npm/v/npm-upgrade.svg\n',
+155 silly resolved     readmeFilename: 'README.md',
+155 silly resolved     _id: 'npm-upgrade@1.2.0',
+155 silly resolved     dist: { shasum: '8eb3b1aac2a3d1c71d3a84c2f6d2b16d4be4145d' },
+155 silly resolved     _from: 'npm-upgrade@',
+155 silly resolved     _resolved: 'https://registry.npmjs.org/npm-upgrade/-/npm-upgrade-1.2.0.tgz' } ]
+156 info install npm-upgrade@1.2.0 into /usr/local/lib
+157 info installOne npm-upgrade@1.2.0
+158 warn engine npm-upgrade@1.2.0: wanted: {"node":">=4"} (current: {"node":"v0.10.25","npm":"1.3.10"})
+159 info /usr/local/lib/node_modules/npm-upgrade unbuild
+160 verbose tar unpack /home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+161 silly lockFile 9f004e76-cal-lib-node-modules-npm-upgrade tar:///usr/local/lib/node_modules/npm-upgrade
+162 verbose lock tar:///usr/local/lib/node_modules/npm-upgrade /home/traveloka/.npm/9f004e76-cal-lib-node-modules-npm-upgrade.lock
+163 silly lockFile b8777f96-pm-npm-upgrade-1-2-0-package-tgz tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz
+164 verbose lock tar:///home/traveloka/.npm/npm-upgrade/1.2.0/package.tgz /home/traveloka/.npm/b8777f96-pm-npm-upgrade-1-2-0-package-tgz.lock
+165 silly gunzTarPerm modes [ '755', '644' ]
+166 error Error: EACCES, mkdir '/usr/local/lib/node_modules'
+166 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules']
+166 error   errno: 3,
+166 error   code: 'EACCES',
+166 error   path: '/usr/local/lib/node_modules',
+166 error   fstream_type: 'Directory',
+166 error   fstream_path: '/usr/local/lib/node_modules/npm-upgrade',
+166 error   fstream_class: 'DirWriter',
+166 error   fstream_stack:
+166 error    [ '/usr/lib/nodejs/fstream/lib/writer.js:171:23',
+166 error      '/usr/lib/nodejs/mkdirp/index.js:37:53',
+166 error      'Object.oncomplete (fs.js:107:15)' ] }
+167 error Please try running this command again as root/Administrator.
+168 error System Linux 4.4.0-92-generic
+169 error command "/usr/bin/nodejs" "/usr/bin/npm" "i" "-g" "npm-upgrade"
+170 error cwd /home/traveloka/Work/wp-heatmap
+171 error node -v v0.10.25
+172 error npm -v 1.3.10
+173 error path /usr/local/lib/node_modules
+174 error fstream_path /usr/local/lib/node_modules/npm-upgrade
+175 error fstream_type Directory
+176 error fstream_class DirWriter
+177 error code EACCES
+178 error errno 3
+179 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules'
+180 error fstream_stack /usr/lib/nodejs/fstream/lib/writer.js:171:23
+180 error fstream_stack /usr/lib/nodejs/mkdirp/index.js:37:53
+180 error fstream_stack Object.oncomplete (fs.js:107:15)
+181 verbose exit [ 3, true ]

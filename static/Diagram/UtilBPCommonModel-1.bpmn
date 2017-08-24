@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.2">
+  <bpmn:collaboration id="Collaboration_0f9a87y">
+    <bpmn:participant id="Participant_19rfnoj" name="TBI" processRef="UtilBPCommonModel" />
+  </bpmn:collaboration>
+  <bpmn:process id="UtilBPCommonModel" name="UtilBPCommonModel" isExecutable="true">
+    <bpmn:ioSpecification>
+      <bpmn:dataInput id="Input_3b30tgr" itemSubjectRef="itemDefInput_3b30tgr" name="pinServiceName" />
+      <bpmn:dataInput id="Input_1ko58eh" itemSubjectRef="itemDefInput_1ko58eh" name="pinServiceJson" />
+      <bpmn:dataOutput id="Output_05p1r6l" itemSubjectRef="itemDefOutput_05p1r6l" name="poutServiceValue" />
+      <bpmn:inputSet>
+        <bpmn:dataInputRefs>Input_3b30tgr</bpmn:dataInputRefs>
+        <bpmn:dataInputRefs>Input_1ko58eh</bpmn:dataInputRefs>
+      </bpmn:inputSet>
+      <bpmn:outputSet>
+        <bpmn:dataOutputRefs>Output_05p1r6l</bpmn:dataOutputRefs>
+      </bpmn:outputSet>
+    </bpmn:ioSpecification>
+    <bpmn:laneSet>
+      <bpmn:lane id="Lane_0wj1bml" name="TBI_Instance">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_032o322</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UserTask_1nymgdx</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_09y84gy</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_09y84gy" sourceRef="StartEvent_1" targetRef="UserTask_1nymgdx" />
+    <bpmn:sequenceFlow id="SequenceFlow_1cm7l1v" sourceRef="UserTask_1nymgdx" targetRef="EndEvent_032o322" />
+    <bpmn:endEvent id="EndEvent_032o322">
+      <bpmn:incoming>SequenceFlow_1cm7l1v</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="UserTask_1nymgdx" name="inquireBPCommonModel">
+      <bpmn:incoming>SequenceFlow_09y84gy</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1cm7l1v</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:dataInput id="Input_2nia266" itemSubjectRef="itemDefInput_2nia266" name="tinServiceName" />
+        <bpmn:dataInput id="Input_00utq8t" itemSubjectRef="itemDefInput_00utq8t" name="tinServiceJson" />
+        <bpmn:dataOutput id="Output_03n50bm" itemSubjectRef="itemDefOutput_03n50bm" name="toutServiceValue" />
+        <bpmn:inputSet>
+          <bpmn:dataInputRefs>Input_2nia266</bpmn:dataInputRefs>
+          <bpmn:dataInputRefs>Input_00utq8t</bpmn:dataInputRefs>
+        </bpmn:inputSet>
+        <bpmn:outputSet>
+          <bpmn:dataOutputRefs>Output_03n50bm</bpmn:dataOutputRefs>
+        </bpmn:outputSet>
+      </bpmn:ioSpecification>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0pjx10y">
+        <bpmn:sourceRef>Input_3b30tgr</bpmn:sourceRef>
+        <bpmn:targetRef>Input_2nia266</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_1banxoy">
+        <bpmn:sourceRef>Input_1ko58eh</bpmn:sourceRef>
+        <bpmn:targetRef>Input_00utq8t</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1r22etp">
+        <bpmn:sourceRef>Output_03n50bm</bpmn:sourceRef>
+        <bpmn:targetRef>Output_05p1r6l</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:itemDefinition id="itemDefInput_3b30tgr" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_1ko58eh" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_05p1r6l" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_2nia266" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefOutput_03n50bm" structureRef="string" />
+  <bpmn:itemDefinition id="itemDefInput_00utq8t" structureRef="string" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0f9a87y">
+      <bpmndi:BPMNShape id="Participant_19rfnoj_di" bpmnElement="Participant_19rfnoj">
+        <dc:Bounds x="123" y="49" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wj1bml_di" bpmnElement="Lane_0wj1bml">
+        <dc:Bounds x="153" y="49" width="570" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_09y84gy_di" bpmnElement="SequenceFlow_09y84gy">
+        <di:waypoint xsi:type="dc:Point" x="218" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="306" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="248" y="170.5" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_032o322_di" bpmnElement="EndEvent_032o322">
+        <dc:Bounds x="498" y="155" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="471" y="191" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1cm7l1v_di" bpmnElement="SequenceFlow_1cm7l1v">
+        <di:waypoint xsi:type="dc:Point" x="406" y="173" />
+        <di:waypoint xsi:type="dc:Point" x="498" y="173" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="440.5" y="163" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1nymgdx_di" bpmnElement="UserTask_1nymgdx">
+        <dc:Bounds x="306" y="133" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

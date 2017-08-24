@@ -1,0 +1,44 @@
+{
+  "name": "wp-heatmap",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "soya-next-scripts build",
+    "eject": "soya-next-scripts eject",
+    "start": "soya-next-scripts start",
+    "test": "soya-next-scripts test"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bpmn-js": "^0.21.0",
+    "diagram-js-minimap": "^0.5.4",
+    "file-system": "^2.2.2",
+    "fixed-data-table": "^0.6.4",
+    "heatmap.js": "^2.0.5",
+    "jquery": "^3.2.1",
+    "next": "^3.0.1-beta.20",
+    "node-dir": "^0.1.17",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-autobind": "^1.0.6",
+    "react-cookie": "^2.0.8",
+    "react-dom": "^15.6.1",
+    "react-file-reader-input": "^1.1.4",
+    "react-file-uploader": "^0.3.3",
+    "react-redux": "^5.0.5",
+    "read-file": "^0.2.0",
+    "read-file-relative": "^1.2.0",
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3",
+    "save": "^2.3.1",
+    "semantic-ui-react": "^0.71.3",
+    "soya-next": "^0.2.0",
+    "soya-next-scripts": "^0.2.7",
+    "webgl-heatmap": "^0.2.3",
+    "xml-js": "^1.4.0"
+  },
+  "eslintConfig": {
+    "globals": {
+      "window": true
+    }
+  }
+}
