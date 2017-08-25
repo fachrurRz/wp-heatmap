@@ -49,6 +49,7 @@ function render(element, canvas, bpmnElements, diagram, data) {
       const statsElement = data[i];
       statsElemente[statsElement.sourceNodeId] = statsElement.count;
     }
+    console.log(bpmnElements, statsElemente);
     Object.keys(bpmnElements).forEach(function iterate(key) {
       const elem = bpmnElements[key];
       if (elem.id.toLowerCase().indexOf('sequenceflow') === 0) {
@@ -88,6 +89,8 @@ function render(element, canvas, bpmnElements, diagram, data) {
       }
     });
   }
+
+  console.log(heatMapData);
   HeatmapService.setData({
     max: 2 * maxWeight,
     data: heatMapData,

@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5494275-1e58-4ffc-a342-f90ec08a30b0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/6.6e8aa11bf55d9c42e886.hot-update.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.next/6e8aa11bf55d9c42e886.hot-update.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/Diagram/WF-BP-01-ProductStockClosing-1.bpmn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/Diagram/WF-BP-01-ProductStockClosing-2.bpmn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/Diagram/WF-BP-02-ProductMovingAveragePriceClosing-1.bpmn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/Diagram/WF-BP-02-ProductMovingAveragePriceClosing-2.bpmn" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/bundles/pages/details.js" afterPath="$PROJECT_DIR$/.next/bundles/pages/details.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/commons.js" afterPath="$PROJECT_DIR$/.next/commons.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/HeatmapRenderer/HeatmapRenderer.js" afterPath="$PROJECT_DIR$/.next/dist/components/HeatmapRenderer/HeatmapRenderer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/WorkflowDiagram/WorkflowDiagram.js" afterPath="$PROJECT_DIR$/.next/dist/components/WorkflowDiagram/WorkflowDiagram.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/dist/components/WorkflowDiagram/WorkflowDiagram.module.css" afterPath="$PROJECT_DIR$/.next/dist/components/WorkflowDiagram/WorkflowDiagram.module.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.next/manifest.js" afterPath="$PROJECT_DIR$/.next/manifest.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/HeatmapRenderer/HeatmapRenderer.js" afterPath="$PROJECT_DIR$/components/HeatmapRenderer/HeatmapRenderer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.js" afterPath="$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.module.css" afterPath="$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.module.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +34,7 @@
       <file leaf-file-name="WorkflowDefinitionDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/containers/WorkflowDefinitionDetail/WorkflowDefinitionDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
+            <state relative-caret-position="-351">
               <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -48,12 +46,12 @@
       <file leaf-file-name="WorkflowDiagram.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+            <state relative-caret-position="390">
+              <caret line="74" column="105" lean-forward="false" selection-start-line="74" selection-start-column="105" selection-end-line="74" selection-end-column="105" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#25#66#0" expanded="true" />
-                <marker date="1503616326102" expanded="true" signature="3492:3706" ph="..." />
+                <marker date="1503620465044" expanded="true" signature="3492:3706" ph="..." />
               </folding>
             </state>
           </provider>
@@ -72,8 +70,8 @@
       <file leaf-file-name="HeatmapRenderer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/HeatmapRenderer/HeatmapRenderer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="89" column="3" lean-forward="false" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
+            <state relative-caret-position="291">
+              <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -117,8 +115,8 @@
       <find>lint</find>
       <find>setData</find>
       <find>render</find>
-      <find>conso</find>
       <find>canva</find>
+      <find>conso</find>
       <find>if</find>
     </findStrings>
   </component>
@@ -332,12 +330,20 @@
       <workItem from="1503487898318" duration="2913000" />
       <workItem from="1503526582028" duration="3297000" />
       <workItem from="1503557242690" duration="6498000" />
-      <workItem from="1503565354903" duration="46869000" />
+      <workItem from="1503565354903" duration="48314000" />
     </task>
+    <task id="LOCAL-00001" summary="ready for presentation">
+      <created>1503619661994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1503619661994</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65471000" />
+    <option name="totallyTimeSpent" value="66916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
@@ -386,6 +392,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ready for presentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready for presentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -766,14 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-20">
@@ -782,21 +784,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.js">
+    <entry file="file://$PROJECT_DIR$/pages/details.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#25#66#0" expanded="true" />
-            <marker date="1503616326102" expanded="true" signature="3492:3706" ph="..." />
-          </folding>
+        <state relative-caret-position="78">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/containers/WorkflowDefinitionDetail/WorkflowDefinitionDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
+        <state relative-caret-position="-351">
           <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -804,10 +802,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/WorkflowDiagram/WorkflowDiagram.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="74" column="105" lean-forward="false" selection-start-line="74" selection-start-column="105" selection-end-line="74" selection-end-column="105" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#25#66#0" expanded="true" />
+            <marker date="1503620465044" expanded="true" signature="3492:3706" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/HeatmapRenderer/HeatmapRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="89" column="3" lean-forward="false" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
+        <state relative-caret-position="291">
+          <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="37" />
           <folding />
         </state>
       </provider>
