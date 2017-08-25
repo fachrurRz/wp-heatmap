@@ -14,7 +14,19 @@ function addHeatMapDataPoint(coord, weight, data, addX, addY) {
   data.push({ x: coord.x + addX, y: coord.y + addY, value: weight });
 }
 
-function renderShape(elemen, weight, data, addX, addY) {
+function renderShape(elemen, weight, data, addX, addY, canvas, type) {
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    ctx.font = '16px Arial';
+    ctx.fillStyle = 'red';
+    if (type === 'input') {
+      ctx.textAlign = 'left';
+      ctx.fillText(`${weight}`, elemen.bounds.x + addX - 10, elemen.bounds.y - 5 + addY);
+    } else {
+      ctx.textAlign = 'right';
+      ctx.fillText(`${weight}`, elemen.bounds.x + addX + elemen.bounds.width + 10, elemen.bounds.y - 5 + addY);
+    }
+  }
   for (let x = elemen.bounds.x + 20; x < elemen.bounds.x + elemen.bounds.width - 20; x += 10) {
     for (let y = elemen.bounds.y + 16; y < elemen.bounds.y + elemen.bounds.height - 16; y += 10) {
       y = parseInt(y, 10);
@@ -24,7 +36,7 @@ function renderShape(elemen, weight, data, addX, addY) {
   }
 }
 
-function render(element, bpmnElements, diagram, data) {
+function render(element, canvas, bpmnElements, diagram, data) {
   const targetDom = element;
   const HeatmapService = initheatmap(targetDom);
   const heatMapData = [];
@@ -32,7 +44,7 @@ function render(element, bpmnElements, diagram, data) {
   const addX = diagram.x;
   const addY = diagram.y;
   const statsElemente = {};
-  if (data) {
+  if (data && canvas) {
     for (let i = 0; i < data.length; i++) {
       const statsElement = data[i];
       statsElemente[statsElement.sourceNodeId] = statsElement.count;
@@ -52,9 +64,10 @@ function render(element, bpmnElements, diagram, data) {
               maxWeight = weight;
             }
             const startElement = bpmnElements[elem.sourceRef];
-            renderShape(startElement, weight, heatMapData, addX, addY);
+            renderShape(startElement, weight, heatMapData, addX, addY, canvas, 'output');
+
             const endElement = bpmnElements[elem.targetRef];
-            renderShape(endElement, weight, heatMapData, addX, addY);
+            renderShape(endElement, weight, heatMapData, addX, addY, canvas, 'input');
             const waypoints = elem.waypoints;
             for (let i = 0; i < waypoints.length - 1; i++) {
               const coordA = waypoints[i];
@@ -75,7 +88,6 @@ function render(element, bpmnElements, diagram, data) {
       }
     });
   }
-
   HeatmapService.setData({
     max: 2 * maxWeight,
     data: heatMapData,

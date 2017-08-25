@@ -20,7 +20,8 @@ class WorkflowDiagram extends Component {
       window.location.replace(`/details?id=${this.state.workflowDefinition.id}&dateTime=${this.props.pushDateTime}`);
     }
     if (this.state.diagram) {
-      render(this.state.targetDom, this.state.bpmnElements, this.state.diagram, this.props.data);
+      const canvas = document.getElementById('data-container');
+      render(this.state.targetDom, canvas, this.state.bpmnElements, this.state.diagram, this.props.data);
     }
   }
 
@@ -86,6 +87,7 @@ class WorkflowDiagram extends Component {
     return (
       <div className={styles.bodyContainer} style={{ overflow: 'scroll' }}>
         <div>
+          <canvas id='data-container' width={'5000px'} height={'5000px'} className={styles.canvasContainer}></canvas>
           <div id='heatmap-container' className={styles.heatmapContainer}></div>
         </div>
         <div id='diagram-container' className={styles.container}></div>

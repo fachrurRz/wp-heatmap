@@ -76,7 +76,8 @@ var WorkflowDiagram = function (_Component) {
         window.location.replace('/details?id=' + this.state.workflowDefinition.id + '&dateTime=' + this.props.pushDateTime);
       }
       if (this.state.diagram) {
-        (0, _HeatmapRenderer2.default)(this.state.targetDom, this.state.bpmnElements, this.state.diagram, this.props.data);
+        var canvas = document.getElementById('data-container');
+        (0, _HeatmapRenderer2.default)(this.state.targetDom, canvas, this.state.bpmnElements, this.state.diagram, this.props.data);
       }
     }
   }, {
@@ -151,20 +152,24 @@ var WorkflowDiagram = function (_Component) {
         }]
       }, _react2.default.createElement('div', { className: _WorkflowDiagramModule2.default.bodyContainer, style: { overflow: 'scroll' }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 88
         }
       }, _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
-        }
-      }, _react2.default.createElement('div', { id: 'heatmap-container', className: _WorkflowDiagramModule2.default.heatmapContainer, __source: {
-          fileName: _jsxFileName,
           lineNumber: 89
+        }
+      }, _react2.default.createElement('canvas', { id: 'data-container', width: '5000px', height: '5000px', className: _WorkflowDiagramModule2.default.canvasContainer, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        }
+      }), _react2.default.createElement('div', { id: 'heatmap-container', className: _WorkflowDiagramModule2.default.heatmapContainer, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
         }
       })), _react2.default.createElement('div', { id: 'diagram-container', className: _WorkflowDiagramModule2.default.container, __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 93
         }
       })));
     }
